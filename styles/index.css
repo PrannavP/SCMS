@@ -20,22 +20,36 @@ header{
 main{
     padding: 2%;
     margin-left: 40vw;
-    margin-top: 10%;
-    width: 250px;
+    margin-top: 8%;
+    width: 300px;
     display: flex;
     justify-content: center;
-    border: 2px solid red;
+    border: 1px solid rgba(61, 59, 59, 0.477);
+    box-shadow: 6px 6px #535b60;
+}
+
+.form-title{
+    font-size: 20px;
+}
+
+.email, .password{
+    margin-top: 20px;
 }
 
 input{
-    width: 240px;
+    margin-top: 6px;
+    width: 270px;
+    height: 25px;
+    padding-left: 4px;
+    font-weight: 400;
+    font-size: 15px;
 }
 
 button{
     padding: 6px;
     cursor: pointer;
     font-weight: bold;
-    background-color: #CE4833;
+    background-color: #e28b7d;
     color: #3e4448;
     outline: none;
     border: none;
