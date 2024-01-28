@@ -4,7 +4,7 @@
     require_once '../../middlewares/checkAuth.php';
 
     // Check if the user is authenticated
-    if (!isUserAuthenticated()) {
+    if (!isManagerAuthenticated()) {
         // Redirect to the login page or display a message
         header("Location: ../../index.html");
         exit();
@@ -21,7 +21,8 @@
 </head>
 <body>
 
-    <p><?php echo $_SESSION["name"] ?></p>
+    <p><?php echo $_SESSION["user_type"] ?></p>
+    <p><?php echo $_SESSION["manager"]["name"] ?></p>
     <button><a href="../../middlewares/logout.php">Logout</a></button>
     
 </body>

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./styles/index.css">
+    <title>Customer Login</title>
+    <link rel="stylesheet" href="../../styles/customer-login.css">
 </head>
 <body>
 
@@ -16,9 +16,9 @@
 
     <main>
 
-        <form action="middlewares/login.php" method="post">
+        <form action="../../middlewares/login.php" method="post">
 
-            <h4 class="form-title">Service Center Manager Login</h4>
+            <h4 class="form-title">Customer Login</h4>
 
             <div class="email">
 
@@ -34,7 +34,8 @@
 
             </div>
 
-            <center><button id="manager-login" name="manager-login">Login</button></center>
+            <center><button id="customer-login" name="customer-login">Login</button></center>
+            <center><p class="create-account-text"><a href="./register-customer.php">Create account here</a></p></center>
 
         </form>
 

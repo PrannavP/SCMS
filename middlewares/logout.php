@@ -1,11 +1,16 @@
 <?php
 
     session_start();
-    
-    // changing auth to false
-    $_SESSION["auth"] = false;
 
-    // redirecting to index
-    header("Location: ../index.html");
+    $user_type = $_SESSION["user_type"];
 
+    if ($user_type === "manager") {
+        $_SESSION['manager']['auth'] = false;
+        header('Location: ../index.html');
+        exit();
+    } elseif ($user_type === "customer") {
+        $_SESSION['customer']["auth"] = false;
+        header('Location: ../pages/customer/customer-login.php');
+        exit();
+}
 ?>

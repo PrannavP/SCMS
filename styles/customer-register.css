@@ -32,7 +32,7 @@ main{
     font-size: 20px;
 }
 
-.email, .password{
+.fullname,.phonenumber,.model,.email, .password{
     margin-top: 20px;
 }
 
@@ -43,6 +43,11 @@ input{
     padding-left: 4px;
     font-weight: 400;
     font-size: 15px;
+}
+
+select{
+    width: 270px;
+    height: 25px;
 }
 
 button{
