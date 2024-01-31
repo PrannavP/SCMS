@@ -7,8 +7,8 @@
 }
 
 body{
-    background-color: #F6F7EB;
-    color: #393E41;
+    background-color: #006D77;
+    color: #EDF6F9;
 }
 
 header{
@@ -17,19 +17,27 @@ header{
     font-weight: bolder;
 }
 
+.brand-image{
+    padding-left: 43%;
+    margin-top: 45px;
+}
+
 main{
     padding: 2%;
-    margin-left: 38vw;
-    margin-top: 8%;
-    width: 300px;
+    margin-left: 36vw;
+    margin-top: 4%;
+    width: 400px;
+    height: 270px;
     display: flex;
     justify-content: center;
     border: 1px solid rgba(61, 59, 59, 0.477);
-    box-shadow: 6px 6px #535b60;
+    background-color: #83C5BE;
+    border-radius: 20px;
 }
 
 .form-title{
     font-size: 20px;
+    color: #EDF6F9;
 }
 
 .email, .password{
@@ -38,22 +46,24 @@ main{
 
 input{
     margin-top: 6px;
-    width: 270px;
-    height: 25px;
+    width: 290px;
+    height: 32px;
     padding-left: 4px;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 19px;
 }
 
 button{
     padding: 6px;
     cursor: pointer;
     font-weight: bold;
-    background-color: #e28b7d;
-    color: #3e4448;
+    background-color: #60958F;
+    color: #EDF6F9;
     outline: none;
     border: none;
     margin-top: 20px;
     margin-bottom: 20px;
     font-size: 19px;
+    width: 145px;
+    height: 45px;
 }

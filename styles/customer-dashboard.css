@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body{
+    background-color: #F6F7EB;
+    color: #393E41;
+}
+
+header{
+    padding: 16px;
+    font-size: 18px;
+}
+
+header h3, header p, header a {
+    display: inline-block;
+}
+
+header p{
+    margin-left: 65vw;
+}
+
+header a{
+    margin-left: 7%;
+}
+
+.request-service{
+    padding: 2%;
+    margin-left: 38vw;
+    margin-top: 1%;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid rgba(61, 59, 59, 0.477);
+}
+
+.form-title{
+    font-size: 20px;
+}
+
+.email, .fullname, .phonenumber, .model, .requestdate, .pickup, .delivery, .pickup-address, .delivery-address{
+    margin-top: 12px;
+}
+
+input{
+    margin-top: 6px;
+    width: 270px;
+    height: 25px;
+    padding-left: 4px;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+input[type='checkbox']{
+    width: 100px;
+}
+
+button{
+    padding: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #e28b7d;
+    color: #3e4448;
+    outline: none;
+    border: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 19px;
+}
+
+.pickup, .delivery{
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.pickup{
+    margin-right: 25%;
+}
