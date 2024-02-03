@@ -7,7 +7,7 @@
 }
 
 body{
-    background-color: #006D77;
+    background-color: #2C3E50;
     color: #EDF6F9;
 }
 
@@ -30,35 +30,39 @@ main{
     height: 270px;
     display: flex;
     justify-content: center;
-    border: 1px solid rgba(61, 59, 59, 0.477);
-    background-color: #83C5BE;
+    /* border: 1px solid rgba(61, 59, 59, 0.477); */
+    background-color: #5183A5;
     border-radius: 20px;
 }
 
 .form-title{
     font-size: 20px;
-    color: #EDF6F9;
+    color: #2A2A2A;
 }
 
 .email, .password{
     margin-top: 20px;
+    color: #2A2A2A;
 }
 
 input{
     margin-top: 6px;
     width: 290px;
-    height: 32px;
+    height: 36px;
     padding-left: 4px;
     font-weight: 400;
+    background-color: #D9D9D9;
     font-size: 19px;
+    outline: none;
+    border: none;
 }
 
 button{
     padding: 6px;
     cursor: pointer;
     font-weight: bold;
-    background-color: #60958F;
-    color: #EDF6F9;
+    background-color: #E74C3C;
+    color: #2A2A2A;
     outline: none;
     border: none;
     margin-top: 20px;
