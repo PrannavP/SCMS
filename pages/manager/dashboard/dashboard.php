@@ -1,12 +1,12 @@
 <?php
 
-    require '../../middlewares/connection.php';
-    require_once '../../middlewares/checkAuth.php';
+    require '../../../middlewares/connection.php';
+    require_once '../../../middlewares/checkAuth.php';
 
     // Check if the user is authenticated
     if (!isManagerAuthenticated()) {
         // Redirect to the login page or display a message
-        header("Location: ../../index.html");
+        header("Location: ../../../index.html");
         exit();
     }
 
@@ -18,7 +18,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="../../styles/manager-dashboard.css">
+    <link rel="stylesheet" href="../../../styles/manager-dashboard.css">
 </head>
 <body>
 
@@ -45,7 +45,7 @@
 
                     <li class="nav-item nav-home active">Home</li>
 
-                    <li class="nav-item nav-customer_requests">Customer Requests</li>
+                    <li class="nav-item nav-customer_requests"><a href="../manager-service-requests/manager-service-requests.php">Customer Requests</a></li>
 
                     <li class="nav-item nav-mechanics">Mechanics</li>
 
@@ -53,7 +53,7 @@
 
                     <li class="nav-item nav-inventory">Inventory</li>
 
-                    <li class="nav-item logout"><a href="../../middlewares/logout.php">Logout</a></a></li>
+                    <li class="nav-item logout"><a href="../../../middlewares/logout.php">Logout</a></a></li>
 
                 </ul>
 
@@ -65,7 +65,9 @@
 
     <div class="user-profile">
 
-        <p class="user-profile-text">Ram Karki</p><br>
+        <p class="user-profile-text">
+            <?php echo $_SESSION["manager"]["name"] ?>
+        </p><br>
 
         <p class="user-profile-text">Manager</p>
 
@@ -83,7 +85,7 @@
 
                     <?php 
                     
-                        require '../../middlewares/connection.php';
+                        require '../../../middlewares/connection.php';
 
                         $serviceCenter = $_SESSION["manager"]["service-center"];
 

@@ -23,7 +23,7 @@
             $_SESSION["manager"]["service-center"] = $row["service_center"];
 
             // redirect to manager dashboard
-            header("Location: ../pages/manager/dashboard.php");
+            header("Location: ../pages/manager/dashboard/dashboard.php");
         } else {
             echo "<p>Incorrect details.</p>";
             header("refresh:3, URL= ../index.html");
