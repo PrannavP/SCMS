@@ -39,9 +39,9 @@ if (!isManagerAuthenticated()) {
 
 				<ul class="nav-items-lists">
 
-					<li class="nav-item nav-home">Home</li>
+					<li class="nav-item nav-home"><a href="../dashboard/dashboard.php">Home</a></li>
 
-					<li class="nav-item nav-customer_requests active">Customer Requests</li>
+					<li class="nav-item nav-customer_requests active"><a href="../manager-service-requests/manager-service-requests.php">Customer Requests</a></li>
 
 					<li class="nav-item nav-mechanics">Mechanics</li>
 

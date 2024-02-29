@@ -43,7 +43,7 @@
 
                 <ul class="nav-items-lists">
 
-                    <li class="nav-item nav-home active">Home</li>
+                    <li class="nav-item nav-home active"><a href="./dashboard.php">Home</a></li>
 
                     <li class="nav-item nav-customer_requests"><a href="../manager-service-requests/manager-service-requests.php">Customer Requests</a></li>
 
