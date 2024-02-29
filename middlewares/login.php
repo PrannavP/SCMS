@@ -7,7 +7,7 @@
         $password = $_POST["psw"];
 
         // sql query
-        $sql = "SELECT fullname FROM manager WHERE email = '$email' AND password = '$password'";
+        $sql = "SELECT fullname, service_center FROM manager WHERE email = '$email' AND password = '$password'";
         $result = mysqli_query($conn, $sql);
 
         if ($result && mysqli_num_rows($result) > 0) {
@@ -20,6 +20,7 @@
             $_SESSION["user_type"] = "manager";
             $_SESSION["manager"]["name"] = $row["fullname"];
             $_SESSION["manager"]["auth"] = true;
+            $_SESSION["manager"]["service-center"] = $row["service_center"];
 
             // redirect to manager dashboard
             header("Location: ../pages/manager/dashboard.php");
