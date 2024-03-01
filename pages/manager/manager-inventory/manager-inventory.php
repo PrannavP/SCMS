@@ -17,8 +17,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manager - Drivers</title>
-    <link rel="stylesheet" href="../../../styles/manager-drivers.css">
+    <title>Manager - Inventory</title>
+    <link rel="stylesheet" href="../../../styles/manager-inventory.css">
 </head>
 <body>
 
@@ -43,9 +43,9 @@
 
                     <li class="nav-item nav-mechanics"><a href="../manager-mechanics/manager-mechanics.php">Mechanics</a></li>
 
-                    <li class="nav-item nav-drivers active"><a href="../manager-drivers/manager-drivers.php">Drivers</a></li>
+                    <li class="nav-item nav-drivers"><a href="../manager-drivers/manager-drivers.php">Drivers</a></li>
 
-                    <li class="nav-item nav-inventory"><a href="../manager-inventory/manager-inventory.php">Inventory</a></li>
+                    <li class="nav-item nav-inventory active"><a href="../manager-inventory/manager-inventory.php">Inventory</a></li>
 
                     <li class="nav-item logout"><a href="../../../middlewares/logout.php">Logout</a></a></li>
 
@@ -67,39 +67,35 @@
 
     </div>
 
-    <article class="drivers">
+    <article class="inventory">
 
-        <h2>Drivers</h2>
+        <h2>Inventory</h2>
 
-        <div class="drivers-table">
+        <div class="inventory-table">
 
             <table border="1">
 
                 <tr>
-                    <th>Driver Name</th>
-                    <th>Driver Number</th>
-                    <th>License Number</th>
-                    <th>License Expiration Date</th>
-                    <th>Date of Joining</th>
+                    <th>ID</th>
+                    <th>Part Name</th>
+                    <th>Price</th>
                 </tr>
 
                 <?php 
-                    $serviceCenter = $_SESSION['manager']['service-center'];
+                    $service_center = $_SESSION['manager']['service-center'];
 
-                    $sql_query_to_get_drivers = "SELECT full_name, contact_number, license_number, license_expirydate, date_of_joining FROM drivers WHERE service_center = '$serviceCenter'";
+                    $sql_to_get_invetory = "SELECT item_name, item_number, item_quantity, item_price FROM inventory";
 
                     // execute the query
-                    $drivers = mysqli_query($conn, $sql_query_to_get_drivers);
+                    $items = mysqli_query($conn, $sql_to_get_invetory);
 
-                    while($rows = mysqli_fetch_assoc($drivers)){
+                    while($rows = mysqli_fetch_assoc($items)){
                 ?>
 
                 <tr>
-                    <td><?php echo $rows["full_name"] ?></td>
-                    <td><?php echo $rows["contact_number"] ?></td>
-                    <td><?php echo $rows["license_number"] ?></td>
-                    <td><?php echo $rows["license_expirydate"] ?></td>
-                    <td><?php echo $rows["date_of_joining"] ?></td>
+                    <td><?php echo $rows["item_number"] ?></td>
+                    <td><?php echo $rows["item_name"] ?></td>
+                    <td><?php echo $rows["item_price"] ?></td>
                 </tr>
 
                 <?php } ?>

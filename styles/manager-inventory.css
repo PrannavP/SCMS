@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body{
+    background-color: #2C3E50;
+    color: #FFFFFF;
+    height: 100vh;
+}
+
+header{
+    padding: 20px;
+    font-size: 19px;
+    font-weight: bolder;
+}
+
+/* Left Navigation Bar */
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+aside{
+    margin-top: 1%;
+    padding: 10px;
+    background-color: #23313F;
+    display: inline-block;
+    width: 16%;
+    height: 69vh;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+li{
+    list-style-type: none;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-left: 5%;
+    margin-bottom: 20%;
+}
+
+li:hover{
+    cursor: pointer;
+}
+
+.active{
+    color: #929292;
+}
+
+ul > li:first-child{
+    margin-top: 10%;
+}
+
+ul > li:last-child {
+    margin-top: 65%;
+}
+
+
+/* User Profile Div */
+.user-profile{
+    width: 13%;
+    height: 10%;
+    background-color: #5183A5;
+    margin-left: 1.5%;
+    margin-top: 2%;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    color: #2A2A2A;
+    font-weight: 600;
+}
+
+.user-profile > p:first-child{
+    text-align: center;
+    padding-top: 5px;
+}
+
+.user-profile > p:last-child{
+    text-align: center;
+    padding-top: 2px;
+}
+
+/* Drivers Style */
+.inventory{
+    position: absolute;
+    top: 8%;
+    left: 18.4%;
+    background-color: #23313F;
+    width: 78.2vw;
+    height: 87vh;
+    border-radius: 20px;
+    padding: 10px;
+    padding-left: 1.2%;
+}
+
+.inventory > h2{
+    margin-left: 0.5%;
+    font-size: 26px;
+    margin-bottom: 1.2%;
+}
+
+/* Lists Table Style */
+table {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-left: -0.3%;
+}
+
+th{
+    padding: 0.5%;
+}
+
+td, th {
+    /* border: 1px solid #dddddd; */
+    text-align: left;
+    padding: 8px;
+}
+
+tr{
+    background-color: #5183A5;
+}
+
+th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #5183A5;
+    color: white;
+}
+
+td{
+    font-weight: 500;
+    color: white;
+    padding: 15px;
+    padding-left: 8px;
+}
+
+/* Table Border */
+table, tr, td {
+    border: 2px solid black;
+}
