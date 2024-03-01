@@ -109,7 +109,7 @@ if (!isManagerAuthenticated()) {
 						<td><?php echo $rows['delivery_address'] ?></td>
 						<td style="width: 80px;"><?php echo $rows['status'] ?></td>
 						<td style="width: 13%;">
-							<button class="acceptBtn actionBtn" id="acceptButton">Accept</button>
+							<button class="acceptBtn actionBtn" id="acceptButton"><a href="./send-mail.php?request_id=<?php echo $rows['request_id'] ?>">Accept</a></button>
 							<button class="declineBtn actionBtn" id="declineButton"><a href="./delete-request.php?request_id=<?php echo $rows['request_id'] ?>">Decline</a></button>
 						</td>
 					</tr>
