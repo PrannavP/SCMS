@@ -1,14 +1,14 @@
 <?php
 
-require '../../../middlewares/connection.php';
-require_once '../../../middlewares/checkAuth.php';
+	require '../../../middlewares/connection.php';
+	require_once '../../../middlewares/checkAuth.php';
 
-// Check if the user is authenticated
-if (!isManagerAuthenticated()) {
-	// Redirect to the login page or display a message
-	header("Location: ../../index.html");
-	exit();
-}
+	// Check if the user is authenticated
+	if (!isManagerAuthenticated()) {
+		// Redirect to the login page or display a message
+		header("Location: ../../index.html");
+		exit();
+	}
 
 ?>
 
@@ -18,7 +18,7 @@ if (!isManagerAuthenticated()) {
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Service Requests</title>
+	<title>Customer Service Requests</title>
 	<link rel="stylesheet" href="../../../styles/manager-service-request.css">
 </head>
 
@@ -43,7 +43,7 @@ if (!isManagerAuthenticated()) {
 
 					<li class="nav-item nav-customer_requests active"><a href="../manager-service-requests/manager-service-requests.php">Customer Requests</a></li>
 
-					<li class="nav-item nav-mechanics">Mechanics</li>
+					<li class="nav-item nav-mechanics"><a href="../manager-mechanics/manager-mechanics.php">Mechanics</a></li>
 
 					<li class="nav-item nav-drivers">Drivers</li>
 
@@ -90,29 +90,31 @@ if (!isManagerAuthenticated()) {
 				</tr>
 
 				<?php
-				$sql_query = "SELECT `request_id`, `requested_by`, `email`, `service_center`, `model`, `contact_number`, `requested_date`, `requested_time`, `pickup`, `pickup_address`, `delivery`, `delivery_address`, `status` FROM `service_request` WHERE `service_center` = 'TVS Kalanki'";
+					$serviceCenter = $_SESSION['manager']['service-center'];
 
-				// execute the query
-				$service_requests = mysqli_query($conn, $sql_query);
+					$sql_query_to_get_service_requests = "SELECT request_id, requested_by, email, service_center, model, contact_number, requested_date, requested_time, pickup, pickup_address, delivery, delivery_address, servicing_status FROM service_request WHERE service_center = '$serviceCenter'";
 
-				while ($rows = mysqli_fetch_assoc($service_requests)) {
+					// execute the query
+					$service_requests = mysqli_query($conn, $sql_query_to_get_service_requests);
+
+					while ($rows = mysqli_fetch_assoc($service_requests)) {
 
 				?>
 
-					<tr>
-						<td><?php echo $rows['requested_by'] ?></td>
-						<td><?php echo $rows['model'] ?></td>
-						<td><?php echo $rows['requested_date'] ?></td>
-						<td><?php echo $rows['requested_time'] ?></td>
-						<td><?php echo $rows['contact_number'] ?></td>
-						<td><?php echo $rows['pickup_address'] ?></td>
-						<td><?php echo $rows['delivery_address'] ?></td>
-						<td style="width: 80px;"><?php echo $rows['status'] ?></td>
-						<td style="width: 13%;">
+				<tr>
+					<td><?php echo $rows['requested_by'] ?></td>
+					<td><?php echo $rows['model'] ?></td>
+					<td><?php echo $rows['requested_date'] ?></td>
+					<td><?php echo $rows['requested_time'] ?></td>
+					<td><?php echo $rows['contact_number'] ?></td>
+					<td><?php echo $rows['pickup_address'] ?></td>
+					<td><?php echo $rows['delivery_address'] ?></td>
+					<td style="width: 80px;"><?php echo $rows['servicing_status'] ?></td>
+					<td style="width: 13%;">
 							<button class="acceptBtn actionBtn" id="acceptButton"><a href="./send-mail.php?request_id=<?php echo $rows['request_id'] ?>">Accept</a></button>
 							<button class="declineBtn actionBtn" id="declineButton"><a href="./delete-request.php?request_id=<?php echo $rows['request_id'] ?>">Decline</a></button>
-						</td>
-					</tr>
+					</td>
+				</tr>
 
 				<?php } ?>
 

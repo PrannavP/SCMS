@@ -47,7 +47,7 @@
 
                     <li class="nav-item nav-customer_requests"><a href="../manager-service-requests/manager-service-requests.php">Customer Requests</a></li>
 
-                    <li class="nav-item nav-mechanics">Mechanics</li>
+                    <li class="nav-item nav-mechanics"><a href="../manager-mechanics/manager-mechanics.php">Mechanics</a></li>
 
                     <li class="nav-item nav-drivers">Drivers</li>
 
@@ -90,7 +90,7 @@
                         $serviceCenter = $_SESSION["manager"]["service-center"];
 
                         // Query
-                        $sql_query = "SELECT requested_by, model, requested_date, requested_time FROM service_request WHERE service_center = '$serviceCenter' AND status = 'Pending Approval'";
+                        $sql_query = "SELECT requested_by, model, requested_date, requested_time FROM service_request WHERE service_center = '$serviceCenter' AND servicing_status = 'Pending Approval'";
 
                         // Execute the query
                         $serviceRequests = mysqli_query($conn, $sql_query);
