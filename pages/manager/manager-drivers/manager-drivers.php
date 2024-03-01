@@ -17,8 +17,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manager - Mechanics</title>
-    <link rel="stylesheet" href="../../../styles/manager-mechanics.css">
+    <title>Manager - Drivers</title>
+    <link rel="stylesheet" href="../../../styles/manager-drivers.css">
 </head>
 <body>
 
@@ -41,9 +41,9 @@
 
                     <li class="nav-item nav-customer_requests "><a href="../manager-service-requests/manager-service-requests.php">Customer Requests</a></li>
 
-                    <li class="nav-item nav-mechanics active"><a href="../manager-mechanics/manager-mechanics.php">Mechanics</a></li>
+                    <li class="nav-item nav-mechanics"><a href="../manager-mechanics/manager-mechanics.php">Mechanics</a></li>
 
-                    <li class="nav-item nav-drivers"><a href="../manager-drivers/manager-drivers.php">Drivers</a></li>
+                    <li class="nav-item nav-drivers active"><a href="../manager-drivers/manager-drivers.php">Drivers</a></li>
 
                     <li class="nav-item nav-inventory">Inventory</li>
 
@@ -67,46 +67,48 @@
 
     </div>
 
-    <article class="mechanics">
+    <article class="drivers">
 
-		<h2>Mechanics</h2>
+        <h2>Drivers</h2>
 
-		<div class="mechanics-table">
+        <div class="drivers-table">
 
-			<table border="1">
+            <table border="1">
 
-				<tr>
-					<th>Mechanic Name</th>
-					<th>Mechanic Number</th>
-                    <th>Address</th>
+                <tr>
+                    <th>Driver Name</th>
+                    <th>Driver Number</th>
+                    <th>License Number</th>
+                    <th>License Expiration Date</th>
                     <th>Date of Joining</th>
-				</tr>
+                </tr>
 
                 <?php 
-					$serviceCenter = $_SESSION['manager']['service-center'];
+                    $serviceCenter = $_SESSION['manager']['service-center'];
 
-                    $sql_query_to_get_mechanics = "SELECT mechanic_id, fullname, contactnumber, address, date_of_joining FROM mechanic WHERE service_center = '$serviceCenter'";
+                    $sql_query_to_get_drivers = "SELECT full_name, contact_number, license_number, license_expirydate, date_of_joining FROM drivers WHERE service_center = '$serviceCenter'";
 
                     // execute the query
-                    $mechanics = mysqli_query($conn, $sql_query_to_get_mechanics);
+                    $drivers = mysqli_query($conn, $sql_query_to_get_drivers);
 
-                    while($rows = mysqli_fetch_assoc($mechanics)){
+                    while($rows = mysqli_fetch_assoc($drivers)){
                 ?>
 
                 <tr>
-                    <td><?php echo $rows['fullname'] ?></td>
-                    <td><?php echo $rows['contactnumber'] ?></td>
-                    <td><?php echo $rows['address'] ?></td>
-                    <td><?php echo $rows['date_of_joining'] ?></td>
+                    <td><?php echo $rows["full_name"] ?></td>
+                    <td><?php echo $rows["contact_number"] ?></td>
+                    <td><?php echo $rows["license_number"] ?></td>
+                    <td><?php echo $rows["license_expirydate"] ?></td>
+                    <td><?php echo $rows["date_of_joining"] ?></td>
                 </tr>
 
                 <?php } ?>
 
-			</table>
+            </table>
 
-		</div>
+        </div>
 
-	</article>
+    </article>
     
 </body>
 </html>
