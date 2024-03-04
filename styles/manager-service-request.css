@@ -134,11 +134,6 @@ th{
     color: white;
 }
 
-
-.requests-table{
-    padding-bottom: 5%;
-}
-
 td{
     font-weight: 500;
     color: white;
@@ -154,7 +149,7 @@ table, tr, td {
 /* Action Buttons */
 .actionBtn{
     cursor: pointer;
-    padding: 5px;
+    padding: 10px;
     border: none;
     margin-left: 6%;
     font-weight: bold;

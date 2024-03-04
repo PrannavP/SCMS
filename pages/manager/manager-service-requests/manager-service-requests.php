@@ -47,7 +47,7 @@
 
                     <li class="nav-item nav-drivers"><a href="../manager-drivers/manager-drivers.php">Drivers</a></li>
 
-					<li class="nav-item nav-inventory"><a href="../manager-inventory/manager-inventory.php">Inventory</a></li>
+                   <li class="nav-item nav-inventory"><a href="../manager-inventory/manager-inventory.php">Inventory</a></li>
 
 					<li class="nav-item logout"><a href="../../../middlewares/logout.php">Logout</a></a></li>
 
@@ -110,9 +110,9 @@
 					<td><?php echo $rows['pickup_address'] ?></td>
 					<td><?php echo $rows['delivery_address'] ?></td>
 					<td style="width: 80px;"><?php echo $rows['servicing_status'] ?></td>
-					<td style="width: 13%;">
-							<button class="acceptBtn actionBtn" id="acceptButton"><a href="./send-mail.php?request_id=<?php echo $rows['request_id'] ?>">Accept</a></button>
-							<button class="declineBtn actionBtn" id="declineButton"><a href="./delete-request.php?request_id=<?php echo $rows['request_id'] ?>">Decline</a></button>
+					<td style="width: 16%;">
+						<button class="acceptBtn actionBtn" id="acceptButton"><a href="./send-mail.php?request_id=<?php echo $rows['request_id'] ?>">Accept</a></button>
+						<button class="declineBtn actionBtn" id="declineButton"><a href="./delete-request.php?request_id=<?php echo $rows['request_id'] ?>">Decline</a></button>
 					</td>
 				</tr>
 

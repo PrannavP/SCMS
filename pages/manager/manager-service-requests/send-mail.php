@@ -85,8 +85,8 @@
     sendEmailToCustomer($customer_name, $customer_email);
 
     // Change the servicing status after email has been sent
-    function changeServicingStaus($connection, $request_id){
-        $sql_query_to_change_status = "UPDATE service_request SET status = 'Pending Servicing' WHERE request_id = $request_id";
+    function changeServicingStatus($connection, $request_id){
+        $sql_query_to_change_status = "UPDATE service_request SET servicing_status = 'Pending Servicing' WHERE request_id = '$request_id'";
 
         $result = mysqli_query($connection, $sql_query_to_change_status);
 
@@ -96,6 +96,6 @@
         };
     };
 
-    changeServicingStaus($conn, $req_id);
+    changeServicingStatus($conn, $req_id);
 
 ?>
