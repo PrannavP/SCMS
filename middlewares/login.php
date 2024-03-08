@@ -25,8 +25,8 @@
             // redirect to manager dashboard
             header("Location: ../pages/manager/dashboard/dashboard.php");
         } else {
-            echo "<p>Incorrect details.</p>";
-            header("refresh:3, URL= ../index.html");
+            // echo "<p>Incorrect details.</p>";
+            // header("refresh:3, URL= ../index.html");
         }
     }
 

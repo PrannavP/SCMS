@@ -144,3 +144,82 @@ td{
 table, tr, td {
     border: 2px solid black;
 }
+
+/* Action Buttons */
+.actionBtn{
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    margin-left: 6%;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.editBtn{
+    background-color: #1AEA6D;
+}
+
+.removeBtn{
+    background-color: #DD3636;
+}
+
+
+/* edit popup */
+.edit-mechanic-container{
+    display: none;
+    justify-content: center;
+    width: 33vw;
+    height: 460px;
+    border: 2px solid black;
+    padding: 10px;
+    position: absolute;
+    top: 10%;
+    left: 34%;
+}
+
+.close-edit-menu{
+    display: inline-block;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+}
+
+.close-edit-menu p{
+    border: 2px solid black;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.edit-mechanic-container h2{
+    margin-top: 1%;
+    margin-bottom: 15%;
+}
+
+label{
+    margin-bottom: 10px;
+}
+
+.edit-mechanic-container input{
+    margin-top: 6px;
+    margin-bottom: 12px;
+    width: 290px;
+    height: 30px;
+    padding-left: 5px;
+    font-size: 18px;
+}
+
+.edit-mechanic-container button{
+    padding: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #1AEA6D;
+    color: #2A2A2A;
+    outline: none;
+    margin-top: 30px;
+    margin-left: 26%;
+    margin-bottom: 10px;
+    font-size: 19px;
+    width: 130px;
+    border: none;
+    height: 40px;
+}

@@ -81,12 +81,13 @@
                     <th>License Number</th>
                     <th>License Expiration Date</th>
                     <th>Date of Joining</th>
+                    <th>Action</th>
                 </tr>
 
                 <?php 
                     $serviceCenter = $_SESSION['manager']['service-center'];
 
-                    $sql_query_to_get_drivers = "SELECT full_name, contact_number, license_number, license_expirydate, date_of_joining FROM drivers WHERE service_center = '$serviceCenter'";
+                    $sql_query_to_get_drivers = "SELECT driver_id, full_name, contact_number, license_number, license_expirydate, date_of_joining FROM drivers WHERE service_center = '$serviceCenter'";
 
                     // execute the query
                     $drivers = mysqli_query($conn, $sql_query_to_get_drivers);
@@ -100,6 +101,10 @@
                     <td><?php echo $rows["license_number"] ?></td>
                     <td><?php echo $rows["license_expirydate"] ?></td>
                     <td><?php echo $rows["date_of_joining"] ?></td>
+                    <td>
+                        <button class="editBtn actionBtn" id=""><a href="#">Edit</a></button>
+                        <button class="removeBtn actionBtn" id="removeButton"><a href="./remove-drivers.php?driver_id=<?php echo $rows['driver_id'] ?>">Remove</a></button>
+                    </td>
                 </tr>
 
                 <?php } ?>
@@ -109,6 +114,16 @@
         </div>
 
     </article>
+
+    <div class="editformpopup" id="editDriverForm">
+        
+        <form action="" method="post">
+
+            
+
+        </form>
+
+    </div>
     
 </body>
 </html>

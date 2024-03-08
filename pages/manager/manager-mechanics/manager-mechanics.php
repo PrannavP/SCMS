@@ -80,6 +80,7 @@
 					<th>Mechanic Number</th>
                     <th>Address</th>
                     <th>Date of Joining</th>
+                    <th>Action</th>
 				</tr>
 
                 <?php 
@@ -94,10 +95,14 @@
                 ?>
 
                 <tr>
-                    <td><?php echo $rows['fullname'] ?></td>
-                    <td><?php echo $rows['contactnumber'] ?></td>
-                    <td><?php echo $rows['address'] ?></td>
-                    <td><?php echo $rows['date_of_joining'] ?></td>
+                    <td class="fullname"><?php echo $rows['fullname'] ?></td>
+                    <td class="contactnumber"><?php echo $rows['contactnumber'] ?></td>
+                    <td class="address"><?php echo $rows['address'] ?></td>
+                    <td class="datejoined"><?php echo $rows['date_of_joining'] ?></td>
+                    <td>
+                        <button class="editBtn actionBtn" id="editButton" onclick="showEditMenu('<?php echo $rows['mechanic_id'] ?>', '<?php echo $rows['fullname'] ?>', '<?php echo $rows['contactnumber'] ?>', '<?php echo $rows['address'] ?>')"><a href="#">Edit</a></button>
+                        <button class="removeBtn actionBtn" id="removeButton"><a href="./remove-mechanics.php?mechanic_id=<?php echo $rows['mechanic_id'] ?>">Remove</a></button>
+                    </td>
                 </tr>
 
                 <?php } ?>
@@ -107,6 +112,65 @@
 		</div>
 
 	</article>
+
+    <div class="edit-mechanic-container">
+
+        <form action="edit-mechanics.php" method="post">
+
+            <center><h2>Edit Mechanics</h2></center>
+
+            <div class="close-edit-menu">
+
+                <p id="closeEditBtn">Close</p>
+
+            </div>
+
+            <div class="id-input">
+
+                <label for="mechanic_id">ID:</label><br>
+                <input type="number" name="mechanicid" id="mechanicid" readonly="true">
+                
+            </div>
+
+            <div class="name-input">
+
+                <label for="fullname">Full Name: </label><br>
+                <input type="text" id="fullname" name="fullname">
+
+            </div>
+
+            <div class="contactnumber-input">
+
+                <label for="contactnumber">Contact Number: </label><br>
+                <input type="text" id="contactnumber" name="contactnumber">
+
+            </div>
+
+            <div class="address-input">
+
+                <label for="address">Address: </label><br>
+                <input type="text" id="address" name="address">
+
+            </div>
+
+            <!-- <div class="datejoined-input">
+
+                <label for="datejoined">Date Joined</label><br>
+                <input type="datetime-local" id="datejoined" name="datejoined">
+
+            </div> -->
+
+            <div class="editButton">
+
+                <button id="editBtn">Edit</button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+    <script src="../../../scripts/manager-mechanics.js"></script>
     
 </body>
 </html>

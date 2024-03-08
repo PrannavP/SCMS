@@ -144,3 +144,21 @@ td{
 table, tr, td {
     border: 2px solid black;
 }
+
+/* Action Buttons */
+.actionBtn{
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    margin-left: 6%;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.editBtn{
+    background-color: #1AEA6D;
+}
+
+.removeBtn{
+    background-color: #DD3636;
+}
