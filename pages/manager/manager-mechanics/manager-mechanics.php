@@ -115,58 +115,64 @@
 
     <div class="edit-mechanic-container">
 
-        <form action="edit-mechanics.php" method="post">
+        <div class="edit-mechanic-content">
 
             <center><h2>Edit Mechanics</h2></center>
+            
+            <form action="edit-mechanics.php" method="post">
 
-            <div class="close-edit-menu">
+                <div class="close-edit-menu">
 
-                <p id="closeEditBtn">Close</p>
+                    <svg id="closeEditBtn" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 16 16">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m11.25 4.75l-6.5 6.5m0-6.5l6.5 6.5" />
+                    </svg>
 
-            </div>
+                </div>
 
-            <div class="id-input">
+                <div class="id-input" style="display: none;">
 
-                <label for="mechanic_id">ID:</label><br>
-                <input type="number" name="mechanicid" id="mechanicid" readonly="true">
-                
-            </div>
+                    <label for="mechanic_id">ID:</label><br>
+                    <input type="number" name="mechanicid" id="mechanicid" readonly="true">
+                    
+                </div>
 
-            <div class="name-input">
+                <div class="name-input">
 
-                <label for="fullname">Full Name: </label><br>
-                <input type="text" id="fullname" name="fullname">
+                    <label for="fullname">Full Name: </label><br>
+                    <input type="text" id="fullname" name="fullname">
 
-            </div>
+                </div>
 
-            <div class="contactnumber-input">
+                <div class="contactnumber-input">
 
-                <label for="contactnumber">Contact Number: </label><br>
-                <input type="text" id="contactnumber" name="contactnumber">
+                    <label for="contactnumber">Contact Number: </label><br>
+                    <input type="text" id="contactnumber" name="contactnumber">
 
-            </div>
+                </div>
 
-            <div class="address-input">
+                <div class="address-input">
 
-                <label for="address">Address: </label><br>
-                <input type="text" id="address" name="address">
+                    <label for="address">Address: </label><br>
+                    <input type="text" id="address" name="address">
 
-            </div>
+                </div>
 
-            <!-- <div class="datejoined-input">
+                <!-- <div class="datejoined-input">
 
-                <label for="datejoined">Date Joined</label><br>
-                <input type="datetime-local" id="datejoined" name="datejoined">
+                    <label for="datejoined">Date Joined</label><br>
+                    <input type="datetime-local" id="datejoined" name="datejoined">
 
-            </div> -->
+                </div> -->
 
-            <div class="editButton">
+                <div class="editButton">
 
-                <button id="editBtn">Edit</button>
+                    <button id="editBtn">Edit</button>
 
-            </div>
+                </div>
 
-        </form>
+            </form>
+
+        </div>
 
     </div>
 

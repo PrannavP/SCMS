@@ -28,11 +28,6 @@
 
         mysqli_query($conn, $sql_query_to_edit_mechanic);
 
-        echo $id;
-        echo $fullname;
-        echo $contact;
-        echo $address;
-
         header("Location: manager-mechanics.php");
     };
 

@@ -25,10 +25,6 @@ const editButtons = document.querySelectorAll(".editBtn");
 const closeEditMenuButton = document.getElementById("closeEditBtn");
 
 function showEditMenu(id, fullname, contactnumber, address){
-    // setting the details in localstorage for temp
-    localStorage.setItem('mechanic_id', id);
-
-
     const editMenuContainer = document.querySelector('.edit-mechanic-container');
 
     // selecting all other elements and setting it's display to none
@@ -38,16 +34,16 @@ function showEditMenu(id, fullname, contactnumber, address){
     const header = document.querySelector('header');
 
     // changing the display
-    mechanicsTable.style.display = "none";
-    userProfile.style.display = "none";
-    sideNavigationBar.style.display = "none";
-    header.style.display = "none";
+    // mechanicsTable.style.display = "none";
+    // userProfile.style.display = "none";
+    // sideNavigationBar.style.display = "none";
+    // header.style.display = "none";
 
     // selecting input form elements
     const idInput = document.getElementById('mechanicid');
     const nameInput = document.getElementById('fullname');
     const contactInput = document.getElementById('contactnumber');
-    const addressInput = document.getElementById('address');
+    const addressInput = document.getElementById('address');    
 
     // setting the default value of input fields according to their row datas
     idInput.value = id;
@@ -57,8 +53,10 @@ function showEditMenu(id, fullname, contactnumber, address){
 
     console.log(id, fullname, contactnumber, address);
 
-    // set the editMenuContainer display to flex show it gets seen
+    // set the editMenuContainer display to flex so it gets seen
     editMenuContainer.style.display = "flex";
+
+    // document.querySelector('body').style.backgroundColor = "background-color: rgba(0, 0, 0, 0.5)";
 };
 
 
@@ -67,18 +65,6 @@ function hideEditMenu(closeeditbtn){
     const editMenuContainer = document.querySelector('.edit-mechanic-container');
 
     editMenuContainer.style.display = "none";
-
-    // selecting all other elements and setting it's display to none
-    const mechanicsTable = document.querySelector('.mechanics');
-    const userProfile = document.querySelector('.user-profile');
-    const sideNavigationBar = document.querySelector('aside');
-    const header = document.querySelector('header');
-
-    // show other elements after hiding the edit menu popup
-    mechanicsTable.style.display = "block";
-    userProfile.style.display = "block";
-    sideNavigationBar.style.display = "block";
-    header.style.display = "block";
 };
 
 // editButton.addEventListener('click', showEditMenu);

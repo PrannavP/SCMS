@@ -102,7 +102,7 @@
                     <td><?php echo $rows["license_expirydate"] ?></td>
                     <td><?php echo $rows["date_of_joining"] ?></td>
                     <td>
-                        <button class="editBtn actionBtn" id=""><a href="#">Edit</a></button>
+                        <button class="editBtn actionBtn" id="editButton" onclick="showEditMenu('<?php echo $rows['driver_id'] ?>', '<?php echo $rows['full_name'] ?>', '<?php echo $rows['contact_number'] ?>', '<?php echo $rows['license_number'] ?>')"><a href="#">Edit</a></button>
                         <button class="removeBtn actionBtn" id="removeButton"><a href="./remove-drivers.php?driver_id=<?php echo $rows['driver_id'] ?>">Remove</a></button>
                     </td>
                 </tr>
@@ -115,15 +115,70 @@
 
     </article>
 
-    <div class="editformpopup" id="editDriverForm">
-        
-        <form action="" method="post">
+    <div class="edit-driver-container">
 
+        <div class="edit-driver-content">
+
+            <center><h2>Edit Driver</h2></center>
             
+            <form action="edit-drivers.php" method="post">
 
-        </form>
+                <div class="close-edit-menu">
+
+                    <svg id="closeEditBtn" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 16 16">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m11.25 4.75l-6.5 6.5m0-6.5l6.5 6.5" />
+                    </svg>
+
+                </div>
+
+                <div class="id-input" style="display: none;">
+
+                    <label for="driver_id">ID:</label><br>
+                    <input type="number" name="driverid" id="driverid" readonly="true">
+                    
+                </div>
+
+                <div class="name-input">
+
+                    <label for="full_name">Full Name: </label><br>
+                    <input type="text" id="fullname" name="fullname">
+
+                </div>
+
+                <div class="contactnumber-input">
+
+                    <label for="contactnumber">Contact Number: </label><br>
+                    <input type="text" id="contactnumber" name="contactnumber">
+
+                </div>
+
+                <div class="license-input">
+
+                    <label for="address">License Number: </label><br>
+                    <input type="text" id="licensenumber" name="licensenumber">
+
+                </div>
+
+                <!-- <div class="license_expiry-input">
+
+                    <label for="license_expiry">License Number: </label><br>
+                    <input type="text" id="licenseexpiry" name="licenseexpiry">
+
+                </div> -->
+
+                <div class="editButton">
+
+                    <button id="editBtn">Edit</button>
+
+                </div>
+
+            </form>
+
+        </div>
 
     </div>
+
+    <script src="../../../scripts/manager-drivers.js"></script>
     
 </body>
 </html>
