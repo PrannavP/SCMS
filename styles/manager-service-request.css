@@ -163,3 +163,211 @@ table, tr, td {
 .declineBtn{
     background-color: #DD3636;
 }
+
+/* edit popup */
+.confirm-service-container{
+    /* display: none;
+    justify-content: center;
+    width: 33vw;
+    height: 460px;
+    border: 2px solid black;
+    padding: 10px;
+    position: absolute;
+    top: 10%;
+    left: 34%; */
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.confirm-service-content{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #2C3E50;
+    margin-left: 35%;
+    margin-top: 5%;
+    border: 1px solid #ccc;
+    width: 30%;
+    height: 69%;
+}
+
+.confirm-service-content h2{
+    margin-top: 5%;
+}
+
+.close-edit-menu{
+    display: inline-block;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    cursor: pointer;
+}
+
+.confirm-service-content h2{
+    margin-top: 6%;
+    margin-bottom: 15%;
+}
+
+label{
+    margin-bottom: 10px;
+}
+
+.confirm-service-container input{
+    margin-top: 6px;
+    margin-bottom: 20px;
+    width: 375px;
+    height: 30px;
+    padding-left: 5px;
+    font-size: 17px;
+}
+
+.confirm-service-container textarea{
+    font-size: 17px;
+    resize: none;
+    padding: 5px;
+}
+
+.confirm-service-container select{
+    /* padding: 10px; */
+    font-size: 17px;
+    width: 375px;
+    height: 25px;
+}
+
+.confirm-service-container select:hover{
+    cursor: pointer;
+}
+
+.confirm-service-container textarea,
+.confirm-service-container select{
+    margin-top: 6px;
+    margin-bottom: 20px;
+}
+
+.confirm-service-container button{
+    padding: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #1AEA6D;
+    color: #2A2A2A;
+    outline: none;
+    margin-top: 30px;
+    margin-left: 26%;
+    margin-bottom: 10px;
+    font-size: 19px;
+    width: 130px;
+    border: none;
+    height: 40px;
+}
+
+
+
+/* details popup */
+.details-service-container{
+    /* display: none;
+    justify-content: center;
+    width: 33vw;
+    height: 460px;
+    border: 2px solid black;
+    padding: 10px;
+    position: absolute;
+    top: 10%;
+    left: 34%; */
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.details-service-content{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #2C3E50;
+    margin-left: 35%;
+    margin-top: 5%;
+    border: 1px solid #ccc;
+    width: 30%;
+    height: 69%;
+}
+
+.details-service-content h2{
+    margin-top: 5%;
+}
+
+.close-edit-menu{
+    display: inline-block;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    cursor: pointer;
+}
+
+.details-service-content h2{
+    margin-top: 6%;
+    margin-bottom: 15%;
+}
+
+label{
+    margin-bottom: 10px;
+}
+
+.details-service-container input{
+    margin-top: 6px;
+    margin-bottom: 20px;
+    width: 375px;
+    height: 30px;
+    padding-left: 5px;
+    font-size: 17px;
+}
+
+.details-service-container textarea{
+    font-size: 17px;
+    resize: none;
+    padding: 5px;
+}
+
+.details-service-container select{
+    /* padding: 10px; */
+    font-size: 17px;
+    width: 375px;
+    height: 25px;
+}
+
+.details-service-container select:hover{
+    cursor: pointer;
+}
+
+.details-service-container textarea,
+.details-service-container select{
+    margin-top: 6px;
+    margin-bottom: 20px;
+}
+
+.details-service-container button{
+    padding: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #1AEA6D;
+    color: #2A2A2A;
+    outline: none;
+    margin-top: 30px;
+    margin-left: 26%;
+    margin-bottom: 10px;
+    font-size: 19px;
+    width: 130px;
+    border: none;
+    height: 40px;
+}

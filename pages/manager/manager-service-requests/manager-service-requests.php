@@ -20,6 +20,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Customer Service Requests</title>
 	<link rel="stylesheet" href="../../../styles/manager-service-request.css">
+	<script defer src="../../../scripts/manager-service-requests.js"></script>
 </head>
 
 <body>
@@ -92,7 +93,7 @@
 				<?php
 					$serviceCenter = $_SESSION['manager']['service-center'];
 
-					$sql_query_to_get_service_requests = "SELECT request_id, requested_by, email, service_center, model, contact_number, requested_date, requested_time, pickup, pickup_address, delivery, delivery_address, servicing_status FROM service_request WHERE service_center = '$serviceCenter'";
+					$sql_query_to_get_service_requests = "SELECT request_id, requested_by, email, service_center, model, details, contact_number, requested_date, requested_time, pickup, pickup_address, delivery, delivery_address, servicing_status, mechanic_assigned, amount FROM service_request WHERE service_center = '$serviceCenter'";
 
 					// execute the query
 					$service_requests = mysqli_query($conn, $sql_query_to_get_service_requests);
@@ -110,10 +111,19 @@
 					<td><?php echo $rows['pickup_address'] ?></td>
 					<td><?php echo $rows['delivery_address'] ?></td>
 					<td style="width: 80px;"><?php echo $rows['servicing_status'] ?></td>
-					<td style="width: 16%;">
-						<button class="acceptBtn actionBtn" id="acceptButton"><a href="./send-mail.php?request_id=<?php echo $rows['request_id'] ?>">Accept</a></button>
-						<button class="declineBtn actionBtn" id="declineButton"><a href="./delete-request.php?request_id=<?php echo $rows['request_id'] ?>">Decline</a></button>
-					</td>
+					<?php 
+						if($rows['servicing_status'] == "Pending Approval"){
+							echo '<td style="width: 16%;">';
+							echo '<button class="acceptBtn actionBtn" id="acceptButton" onclick="openAcceptModal(' . $rows['request_id'] . ', \'' . $rows['details'] . '\', \'' . $rows['amount'] . '\')">Accept</button>';
+							echo '<button class="declineBtn actionBtn" id="declineButton"><a href="./delete-request.php?request_id=' . $rows['request_id'] . '">Decline</a></button>';
+							echo '</td>';
+						}else{
+							echo '<td style="width: 16%";>';
+							echo '<button class="actionBtn acceptBtn" id="viewDetailsButton" onclick="openDetailsModal(' . $rows['request_id'] . ', \'' . $rows['details'] . '\', \'' . $rows['amount'] . '\', \'' . $rows['servicing_status'] . '\')">Details</button>';
+							echo '<button class="actionBtn declineBtn" id="completedServicing">Complete</button>';
+							echo '</td>';
+						}
+					?>
 				</tr>
 
 				<?php } ?>
@@ -123,6 +133,121 @@
 		</div>
 
 	</article>
+
+	<div class="confirm-service-container">
+
+        <div class="confirm-service-content">
+
+            <center><h2>Accept Servicve Request</h2></center>
+            
+            <form action="send-mail.php" method="post">
+
+                <div class="close-edit-menu">
+
+                    <svg id="closeEditBtn" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 16 16">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m11.25 4.75l-6.5 6.5m0-6.5l6.5 6.5" />
+                    </svg>
+
+                </div>
+
+                <div class="id-input">
+
+                    <label for="request_id">Request ID:</label><br>
+                    <input type="number" name="request_id" id="request_id" readonly="true">
+                    
+                </div>
+
+				<div class="details-field">
+					<label for="customer-servicing-detail">Details:</label><br>
+					<textarea name="servicing-details"  id="customer-servicing-detail" cols="38" rows="4"></textarea>
+				</div>
+
+                <div class="assignMechanic-field">
+
+                    <label for="mechanic_name">Assign Mechanic</label><br>
+                    <select name="mechanic_name" id="mechanic_name">
+						<?php
+							require '../../../middlewares/connection.php';
+
+							$serviceCenter = $_SESSION['manager']['service-center'];
+
+							// query to get all the mechanics list
+							$query_get_all_mechanics_list = "SELECT * FROM mechanic WHERE service_center = '$serviceCenter'";
+							$mechanics_result = mysqli_query($conn, $query_get_all_mechanics_list);
+
+							while($mechanic_row = mysqli_fetch_assoc($mechanics_result)){
+								echo "<option>" . $mechanic_row['fullname'] . "</option>";
+							};
+						?>
+					</select>
+
+                </div>
+
+				<div class="servicing-amount-field">
+
+					<label for="amount">Amount:</label><br>
+					<input type="number" id="amount" name="amount">
+
+				</div>
+
+                <button id="confirmRequestButton">Confirm</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+	<!-- details popup modal -->
+	<div class="details-service-container">
+
+		<div class="details-service-content">
+
+			<center><h2>Servicve Details</h2></center>
+            
+            <form action="servicing-details.php" method="post">
+
+                <div class="close-edit-menu">
+
+                    <svg id="details-closeDetailstBtn" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 16 16">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m11.25 4.75l-6.5 6.5m0-6.5l6.5 6.5" />
+                    </svg>
+
+                </div>
+
+                <div class="id-input">
+
+                    <label for="request_id">Request ID:</label><br>
+                    <input type="number" name="request_id" id="details-request_id" readonly="true">
+                    
+                </div>
+
+				<div class="details-field">
+					<label for="customer-servicing-detail">Details:</label><br>
+					<textarea name="servicing-details"  id="details-customer-servicing-detail" cols="38" rows="4"></textarea>
+				</div>
+
+				<div class="servicingStatus-field">
+
+                    <label for="servicing_status">Servicing Status</label><br>
+                    <input type="text" name="servicing_status" id="details-servicing_status" readonly>
+
+                </div>
+
+				<div class="servicing-amount-field">
+
+					<label for="details-amount">Amount:</label><br>
+					<input type="number" id="details-amount" name="details-amount">
+
+				</div>
+
+                <button id="changeDetailsButton">Confirm</button>
+
+            </form>
+
+		</div>
+
+	</div>
 
 </body>
 

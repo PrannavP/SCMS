@@ -71,6 +71,12 @@
 
         <h2>Inventory</h2>
 
+        <div class="addItemBtn" id="addItem">
+
+            <button id="openModalBtn">Add Item</button>
+
+        </div>
+
         <div class="inventory-table">
 
             <table border="1">
@@ -78,6 +84,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Part Name</th>
+                    <th>In Stock</th>
                     <th>Price</th>
                 </tr>
 
@@ -95,6 +102,7 @@
                 <tr>
                     <td><?php echo $rows["item_number"] ?></td>
                     <td><?php echo $rows["item_name"] ?></td>
+                    <td><?php echo $rows["item_quantity"] ?></td>
                     <td><?php echo $rows["item_price"] ?></td>
                 </tr>
 
@@ -105,6 +113,64 @@
         </div>
 
     </article>
+
+    <div class="add-item-container">
+
+        <div class="add-item-container-content">
+
+            <center><h2>Add Scooter/Bike Part</h2></center>
+
+            <form action="add-item-inventory.php" method="post">
+
+                <div class="close-add-menu" >
+
+                    <svg id="closeAddBtn" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 16 16">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m11.25 4.75l-6.5 6.5m0-6.5l6.5 6.5" />
+                    </svg>
+
+                </div>
+
+                <div class="part-number">
+
+                    <label for="partnumber">Part Number:</label><br>
+                    <input type="text" name="partnumber" id="partnumber">
+
+                </div>
+
+                <div class="part-name">
+
+                    <label for="partname">Part Name:</label><br>
+                    <input type="text" name="partname" id="partname">
+
+                </div>
+
+                <div class="part-quantity">
+
+                    <label for="partquantity">Part Quantity:</label><br>
+                    <input type="number" name="partquantity" id="partquantity">
+
+                </div>
+
+                <div class="part-price">
+
+                    <label for="partprice">Part Price:</label><br>
+                    <input type="number" name="partprice" id="partprice">
+
+                </div>
+
+                <div class="addButton">
+
+                    <button id="addBtn">Add</button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="../../../scripts/manager-inventory.js"></script>
     
 </body>
 </html>

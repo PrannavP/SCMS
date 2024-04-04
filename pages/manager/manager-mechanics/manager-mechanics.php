@@ -71,6 +71,12 @@
 
 		<h2>Mechanics</h2>
 
+        <div class="addMechanic" id="addMechanic">
+
+            <button id="openModalBtn">Add Mechanic</button>
+
+        </div>
+
 		<div class="mechanics-table">
 
 			<table border="1">

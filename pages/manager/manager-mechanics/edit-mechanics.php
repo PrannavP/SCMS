@@ -1,9 +1,3 @@
-<script>
-
-    let mechanic_id = localStorage.getItem('mechanic_id');
-
-</script>
-
 <?php
 
     require '../../../middlewares/connection.php';

@@ -15,10 +15,10 @@
         // Redirect to the login page or display a message
         header("Location: ../../index.html");
         exit();
-    }
+    };
 
     function getCustomerDetails($connection){
-        $req_id = $_GET['request_id'];
+        $req_id = $_POST['request_id'];
 
         // sql query to get customer name and email
         $sql_query_to_get_name_and_email = "SELECT requested_by, email FROM service_request WHERE request_id = $req_id";
@@ -28,6 +28,7 @@
         // Checking if query was successful or not
         if(!$result){
             die("Query failed:" . mysqli_error($connection));
+            echo "Query Failed";
         };
 
         // Initialize variables
@@ -94,8 +95,44 @@
         if(!$result){
             die("Query failed:" . mysqli_error($connection));
         };
+
+        // header("Location: manager-service-requests.php");
     };
 
     changeServicingStatus($conn, $req_id);
 
+    // assigning mechanics to service requests
+    function assignMechanics($connection, $request_id){
+        $mechanic_name = $_POST["mechanic_name"];
+
+        $sql_query_to_assign_mechanic = "UPDATE `service_request` SET `mechanic_assigned`='$mechanic_name' WHERE `request_id` = '$request_id'";
+
+        mysqli_query($connection, $sql_query_to_assign_mechanic);
+
+        // header("Location: manager-service-requests.php");
+    };
+
+    assignMechanics($conn, $req_id);
+
+    // funtion to update servicing details
+    function updateDetails($connection, $request_id){
+        $details = $_POST['servicing-details'];
+
+        $sql_query_to_update_details = "UPDATE `service_request` SET `details` = '$details' WHERE `request_id` = '$request_id'";
+
+        mysqli_query($connection, $sql_query_to_update_details);
+    };
+
+    updateDetails($conn, $req_id);
+
+    // function to update servicing amount
+    function updateAmount($connection, $request_id){
+        $amount = $_POST["amount"];
+
+        $sql_query_to_update_amount = "UPDATE `service_request` SET `amount` = '$amount' WHERE `request_id` = '$request_id'";
+
+        mysqli_query($connection, $sql_query_to_update_amount);
+    };
+
+    updateAmount($conn, $req_id);
 ?>

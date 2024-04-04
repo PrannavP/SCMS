@@ -7,76 +7,221 @@
 }
 
 body{
-    background-color: #F6F7EB;
-    color: #393E41;
+    background-color: #2C3E50;
+    color: #FFFFFF;
+    height: 100vh;
 }
 
 header{
-    padding: 16px;
-    font-size: 18px;
-}
-
-header h3, header p, header a {
-    display: inline-block;
-}
-
-header p{
-    margin-left: 65vw;
-}
-
-header a{
-    margin-left: 7%;
-}
-
-.request-service{
-    padding: 2%;
-    margin-left: 38vw;
-    margin-top: 1%;
-    width: 300px;
-    display: flex;
-    justify-content: center;
-    border: 1px solid rgba(61, 59, 59, 0.477);
-}
-
-.form-title{
-    font-size: 20px;
-}
-
-.email, .fullname, .phonenumber, .model, .requestdate, .pickup, .delivery, .pickup-address, .delivery-address{
-    margin-top: 12px;
-}
-
-input{
-    margin-top: 6px;
-    width: 270px;
-    height: 25px;
-    padding-left: 4px;
-    font-weight: 400;
-    font-size: 15px;
-}
-
-input[type='checkbox']{
-    width: 100px;
-}
-
-button{
-    padding: 6px;
-    cursor: pointer;
-    font-weight: bold;
-    background-color: #e28b7d;
-    color: #3e4448;
-    outline: none;
-    border: none;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    padding: 20px;
     font-size: 19px;
+    font-weight: bolder;
 }
 
-.pickup, .delivery{
+/* Left Navigation Bar */
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+aside{
+    margin-top: 1%;
+    padding: 10px;
+    background-color: #23313F;
     display: inline-block;
-    margin-top: 20px;
+    width: 16%;
+    height: 69vh;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
 }
 
-.pickup{
+li{
+    list-style-type: none;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-left: 5%;
+    margin-bottom: 20%;
+}
+
+li:hover{
+    cursor: pointer;
+}
+
+.active{
+    color: #929292;
+}
+
+ul > li:first-child{
+    margin-top: 10%;
+}
+
+ul > li:last-child {
+    margin-top: 65%;
+}
+
+
+
+/* User Profile Div */
+.user-profile{
+    width: 13%;
+    height: 10%;
+    background-color: #5183A5;
+    margin-left: 1.5%;
+    margin-top: 2%;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    color: #2A2A2A;
+    font-weight: 600;
+}
+
+.user-profile > p:first-child{
+    text-align: center;
+    padding-top: 5px;
+}
+
+.user-profile > p:last-child{
+    text-align: center;
+    padding-top: 2px;
+}
+
+/* Dashboard Style */
+
+.dashboard{
+    position: absolute;
+    top: 8%;
+    left: 18.4%;
+    background-color: #23313F;
+    width: 78.2vw;
+    height: 87vh;
+    border-radius: 20px;
+    padding: 10px;
+    padding-left: 1.2%;
+}
+
+.dashboard > h2{
+    margin-left: 0.5%;
+    font-size: 26px;
+    margin-bottom: 1.2%;
+}
+
+.service-centers-container{
+    float: left;
+    width: 38.2vw;
+    height: 78.5vh;
+    background-color: #5183A5;
+    border-radius: 30px;
+    padding-left: 1%;
+    padding-top: 1.1%;
+    overflow: hidden;
+}
+
+.service-centers-container{
+    overflow: auto;
+    scrollbar-width: none; /* removes the scrollbar */
+}
+
+.service-centers-container > h4{
+    font-size: 22px;
+    text-align: center;
+}
+
+.service-centers-container > .service-centers > .service-center{
+    margin-left: 2%;
+    margin-top: 2.5%;
+    width: 36vw;
+    height: 16.4vh;
+    background-color: #23313F;
+    border-radius: 20px;
+}
+
+.service-center > div > p{
+    font-size: 1.2rem;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.service-center > div{
+    display: inline-block;
+    margin-top: 2.5%;
+}
+
+.left-column{
+    margin-left: 6%;
+}
+
+.right-column{
+    /* margin-top: -10px; */
+    /* margin-left: 8vw; */
+    float: right;
+    margin-right: 20px;
+}
+
+.service-center-location, .service-center_contact{
+    margin-top: 55px;
+}
+
+/* Servicing Status Section */
+.servicing-section{
+    float: left;
+    width: 25vw;
+    height: 25vh;
+    background-color: #5183A5;
+    margin-left: 10%;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.servcing-status-header{
+    text-align: center;
+    font-size: 22px;
+}
+
+.mechanic-section-svg{
+    width: 40%;
+    margin-top: 9%;
+    padding-left: 3.8vw;
+    float: left;
+}
+
+.status-section{
+    float: right;
     margin-right: 25%;
+    margin-top: 15%;
+}
+
+.status-text{
+    font-size: 16px;
+}
+
+.drivers-section{
+    width: 25vw;
+    height: 25vh;
+    background-color: #5183A5;
+    border-radius: 20px;
+    padding: 10px;
+    margin-left: 10%;
+    margin-top: 23vh;
+}
+
+.driver-section-header{
+    text-align: center;
+    font-size: 22px;
+}
+
+.driver-section-svg{
+    width: 30%;
+    margin-top: 9.3%;
+    padding-left: 3.5vw;
+    float: left;
+}
+
+.driver-count{
+    float: right;
+    margin-right: 25%;
+    margin-top: 17%;
+}
+
+.driver-count-number{
+    font-size: 16px;
 }

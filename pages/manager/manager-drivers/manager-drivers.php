@@ -133,7 +133,7 @@
 
                 <div class="id-input" style="display: none;">
 
-                    <label for="driver_id">ID:</label><br>
+                    <label for="driverid">ID:</label><br>
                     <input type="number" name="driverid" id="driverid" readonly="true">
                     
                 </div>

@@ -1,10 +1,10 @@
 // show and hide edit menu
 
 const editButtts = document.querySelectorAll('.editBtn');
-const closedEditMenuButton = document.getElementById('closeEditBtn');;
+const closedEditMenuButton = document.getElementById('closeEditBtn');
 
 function showEditMenu(id, fullname, contactnumber, licensenumber){
-    const editMenuContainer = document.querySelector('.edit-driver-container') ;
+    const editMenuContainer = document.querySelector('.edit-driver-container');
 
     // selecting input frorm elements
     const idInput = document.getElementById('driverid');

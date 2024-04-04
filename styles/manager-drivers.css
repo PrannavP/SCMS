@@ -197,10 +197,6 @@ table, tr, td {
     height: 60%;
 }
 
-.edit-driver-content h2{
-    margin-top: 5%;
-}
-
 .close-edit-menu{
     display: inline-block;
     position: absolute;

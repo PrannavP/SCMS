@@ -1,4 +1,4 @@
-<?php
+x<?php
     require './connection.php';
 
     // login function
@@ -48,6 +48,7 @@
             $_SESSION = array(); // Clear existing session data
             $_SESSION["user_type"] = "customer";
             $_SESSION["customer"]["name"] = $row['full_name'];
+            $_SESSION["customer"]["email"] = $email;
             $_SESSION["customer"]["auth"] = true;
 
             // redirect to customer dashboard
