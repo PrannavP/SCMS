@@ -69,9 +69,9 @@
 
     <article class="mechanics">
 
-		<h2>Mechanics</h2>
+		<h2 style="display: inline-block;">Mechanics</h2>
 
-        <div class="addMechanic" id="addMechanic">
+        <div class="addMechanicContainer" id="addMechanic">
 
             <button id="openModalBtn">Add Mechanic</button>
 
@@ -173,6 +173,55 @@
                 <div class="editButton">
 
                     <button id="editBtn">Edit</button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <div class="add-mechanic-container">
+
+        <div class="add-mechanic-container-content">
+
+            <center><h2>Add Mechanic</h2></center>
+
+            <form action="add-mechanics.php" method="post">
+
+                <div class="close-add-menu">
+
+                    <svg id="closeAddBtn" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 16 16">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m11.25 4.75l-6.5 6.5m0-6.5l6.5 6.5" />
+                    </svg>
+
+                </div>
+
+                <div class="mechanic-name">
+
+                    <label for="mechanicname">Mechanic Name:</label><br>
+                    <input type="text" name="mechanicname" id="mechanicname">
+
+                </div>
+
+                <div class="mechanic-contactnumber">
+
+                    <label for="mechanic-contactnumber">Mechanic Contact:</label><br>
+                    <input type="number" name="mechanic-contactnumber" id="mechanic-contactnumber">
+
+                </div>
+
+                <div class="mechanic-address">
+
+                    <label for="mechanic-address">Mechanic Address:</label><br>
+                    <input type="text" name="mechanic-address" id="mechanic-address">
+
+                </div>
+
+                <div class="addButton">
+
+                    <button id="addBtn">Add Mechanic</button>
 
                 </div>
 

@@ -122,7 +122,7 @@
 
             <form action="add-item-inventory.php" method="post">
 
-                <div class="close-add-menu" >
+                <div class="close-add-menu">
 
                     <svg id="closeAddBtn" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 16 16">
                         <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m11.25 4.75l-6.5 6.5m0-6.5l6.5 6.5" />

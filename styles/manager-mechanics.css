@@ -103,6 +103,7 @@ ul > li:last-child {
     margin-bottom: 1.2%;
 }
 
+
 /* Lists Table Style */
 table {
     font-family: Arial, sans-serif;
@@ -242,4 +243,105 @@ label{
     width: 130px;
     border: none;
     height: 40px;
+}
+
+/* add icon */
+.addMechanicBtn{
+    float: right;
+    cursor: pointer;
+    margin-right: 2%;
+    margin-top: 2px;
+}
+
+#openModalBtn{
+    width: 102px;
+    font-weight: 600;
+    height: 30px;
+    cursor: pointer;
+    background-color: #1AEA6D;
+    outline: none;
+    border: none;
+    padding: 4px;
+}
+
+.addMechanicContainer{
+    margin-top: 3px;
+    display: inline-block;
+    float: right;
+    margin-right: 1%;
+}
+
+/* add mechanic modal */
+.add-mechanic-container{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.add-mechanic-container-content{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #2C3E50;
+    margin-left: 35%;
+    margin-top: 5%;
+    border: 1px solid #ccc;
+    width: 26%;
+    height: 55%;
+}
+
+.add-mechanic-container-content h2{
+    margin-top: 6%;
+    margin-bottom: 15%;
+}
+
+.close-add-menu{
+    position: absolute;
+    top: 0.5%;
+    right: 0.5%;
+    cursor: pointer;
+}
+
+label{
+    margin-bottom: 10px;
+}
+
+.add-mechanic-container input{
+    margin-top: 6px;
+    margin-bottom: 20px;
+    width: 290px;
+    height: 30px;
+    padding-left: 5px;
+    font-size: 18px;
+}
+
+.add-mechanic-container button{
+    padding: 6px;
+    cursor: pointer;
+    background-color: #1AEA6D;
+    color: #2A2A2A;
+    outline: none;
+    margin-top: 5%;
+    margin-left: 26%;
+    font-size: 19px;
+    width: 130px;
+    border: none;
+    height: 40px;
+}
+
+.close-add-menu{
+    /* display: inline-block; */
+    float: right;
+    cursor: pointer;
+}
+
+#addBtn{
+    width: 143px;
+    height: 36px;
 }

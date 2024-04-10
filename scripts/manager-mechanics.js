@@ -67,17 +67,21 @@ function hideEditMenu(closeeditbtn){
     editMenuContainer.style.display = "none";
 };
 
-// editButton.addEventListener('click', showEditMenu);
-// editButtons.forEach(function(button){
-//     button.addEventListener('click', function(){
-//         let row = button.closest('tr');
-//         let fullname = row.querySelector('.fullname').textContent;
-//         let contactnumber = row.querySelector('.contactnumber').textContent;
-//         let address = row.querySelector('.address').textContent;
-
-//         // open the popup edit menu
-//         showEditMenu(fullname, contactnumber, address);
-//     });
-// });
-
 closeEditMenuButton.addEventListener('click', hideEditMenu);
+
+
+// show / hide add mechanics button
+const addMechanicButton = document.getElementById('openModalBtn');
+let addMechanicContainer = document.querySelector('.add-mechanic-container');
+const closeMechanicContainer = document.getElementById('closeAddBtn');
+
+function showAddMechanicForm(){
+    addMechanicContainer.style.display = "flex";
+};
+
+function closeAddMechanicForm(){
+    addMechanicContainer.style.display = "none";
+};
+
+addMechanicButton.addEventListener('click', showAddMechanicForm);
+closeMechanicContainer.addEventListener('click', closeAddMechanicForm);
