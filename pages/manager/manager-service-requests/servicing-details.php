@@ -66,4 +66,14 @@ function updateAmount($connection, $request_id){
 
 updateAmount($conn, $req_id);
 
+function addParts($connection, $request_id){
+    $parts = $_POST["parts"];
+
+    $sql_query_to_add_parts = "UPDATE `service_request` SET `parts`='$parts' WHERE `request_id`= $request_id";
+
+    mysqli_query($connection, $sql_query_to_add_parts);
+};
+
+addParts($conn, $req_id);
+
 header("Location: manager-service-requests.php");

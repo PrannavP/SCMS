@@ -46,6 +46,8 @@
                     <li class="nav-item nav-drivers"><a href="../manager-drivers/manager-drivers.php">Drivers</a></li>
 
                     <li class="nav-item nav-inventory"><a href="../manager-inventory/manager-inventory.php">Inventory</a></li>
+                    
+                    <li class="nav-item nav-billing"><a href="../manager-billing/manager-billing.php">Billing</a></li>
 
                     <li class="nav-item logout"><a href="../../../middlewares/logout.php">Logout</a></a></li>
 

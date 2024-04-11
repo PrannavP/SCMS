@@ -48,7 +48,9 @@
 
                     <li class="nav-item nav-drivers"><a href="../manager-drivers/manager-drivers.php">Drivers</a></li>
 
-                   <li class="nav-item nav-inventory"><a href="../manager-inventory/manager-inventory.php">Inventory</a></li>
+                   	<li class="nav-item nav-inventory"><a href="../manager-inventory/manager-inventory.php">Inventory</a></li>
+
+					<li class="nav-item nav-billing"><a href="../manager-billing/manager-billing.php">Billing</a></li>
 
 					<li class="nav-item logout"><a href="../../../middlewares/logout.php">Logout</a></a></li>
 
@@ -93,7 +95,7 @@
 				<?php
 					$serviceCenter = $_SESSION['manager']['service-center'];
 
-					$sql_query_to_get_service_requests = "SELECT request_id, requested_by, email, service_center, model, details, contact_number, requested_date, requested_time, pickup, pickup_address, delivery, delivery_address, servicing_status, mechanic_assigned, amount FROM service_request WHERE service_center = '$serviceCenter'";
+					$sql_query_to_get_service_requests = "SELECT request_id, requested_by, email, service_center, model, details, contact_number, requested_date, requested_time, pickup, pickup_address, delivery, delivery_address, servicing_status, mechanic_assigned, parts, amount FROM service_request WHERE service_center = '$serviceCenter'";
 
 					// execute the query
 					$service_requests = mysqli_query($conn, $sql_query_to_get_service_requests);
@@ -117,10 +119,14 @@
 							echo '<button class="acceptBtn actionBtn" id="acceptButton" onclick="openAcceptModal(' . $rows['request_id'] . ', \'' . $rows['details'] . '\', \'' . $rows['amount'] . '\')">Accept</button>';
 							echo '<button class="declineBtn actionBtn" id="declineButton"><a href="./delete-request.php?request_id=' . $rows['request_id'] . '">Decline</a></button>';
 							echo '</td>';
+						}elseif($rows['servicing_status'] == "Completed Servicing"){
+							echo '<td style="width: 16%;">';
+							echo '<button style="margin-left: 28%;" class="actionBtn acceptBtn" id="viewDetailsButton" onclick="openDetailsModal(' . $rows['request_id'] . ', \'' . $rows['details'] . '\', \'' . $rows['amount'] . '\', \'' . $rows['servicing_status'] . '\', \'' . $rows['parts'] . '\')">Details</button>';
+							echo '</td>';
 						}else{
 							echo '<td style="width: 16%";>';
-							echo '<button class="actionBtn acceptBtn" id="viewDetailsButton" onclick="openDetailsModal(' . $rows['request_id'] . ', \'' . $rows['details'] . '\', \'' . $rows['amount'] . '\', \'' . $rows['servicing_status'] . '\')">Details</button>';
-							echo '<button class="actionBtn declineBtn" id="completedServicing">Complete</button>';
+							echo '<button class="actionBtn acceptBtn" id="viewDetailsButton" onclick="openDetailsModal(' . $rows['request_id'] . ', \'' . $rows['details'] . '\', \'' . $rows['amount'] . '\', \'' . $rows['servicing_status'] . '\', \'' . $rows['parts'] . '\')">Details</button>';
+							echo '<button class="actionBtn declineBtn" id="completedServicing"><a href="./complete-servicing.php?request_id=' . $rows['request_id'] . '">Complete</a></button>';
 							echo '</td>';
 						}
 					?>
@@ -233,6 +239,13 @@
                     <input type="text" name="servicing_status" id="details-servicing_status" readonly>
 
                 </div>
+
+				<div class="parts-field">
+
+					<label for="parts">Parts:</label><br>
+					<textarea name="parts" id="details-parts" cols="38" rows="4"></textarea>
+
+				</div>
 
 				<div class="servicing-amount-field">
 
