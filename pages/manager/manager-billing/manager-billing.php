@@ -41,7 +41,7 @@
 
 					<li class="nav-item nav-home"><a href="../dashboard/dashboard.php">Home</a></li>
 
-					<li class="nav-item nav-customer_requests active"><a href="../manager-service-requests/manager-service-requests.php">Customer Requests</a></li>
+					<li class="nav-item nav-customer_requests"><a href="../manager-service-requests/manager-service-requests.php">Customer Requests</a></li>
 
 					<li class="nav-item nav-mechanics"><a href="../manager-mechanics/manager-mechanics.php">Mechanics</a></li>
 
@@ -49,7 +49,7 @@
 
                     <li class="nav-item nav-inventory"><a href="../manager-inventory/manager-inventory.php">Inventory</a></li>
 
-                    <li class="nav-item nav-billing"><a href="#">Billing</a></li>
+                    <li class="nav-item nav-billing active"><a href="#">Billing</a></li>
 
                     <li class="nav-item logout"><a href="../../../middlewares/logout.php">Logout</a></a></li>
 
@@ -73,13 +73,14 @@
 
 	<article class="customer-requests">
 
-		<h2>Customer Requests</h2>
+		<h2>Billing Reports</h2>
 
-		<div class="requests-table">
+		<div class="billings-table">
 
 			<table border="1">
 
 				<tr>
+					<th>S.N</th>
 					<th>Customer Name</th>
 					<th>Mechanic Name</th>
 					<th>Parts</th>
@@ -101,6 +102,7 @@
 				?>
 
 				<tr>
+					<td><?php  echo $rows['billing_id'] ?></td>
 					<td><?php echo $rows['customer_name'] ?></td>
 					<td><?php echo $rows['serviced_by'] ?></td>
 					<td><?php echo $rows['parts'] ?></td>

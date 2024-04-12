@@ -1,12 +1,12 @@
 <?php
 
-    require '../../middlewares/connection.php';
-    require_once '../../middlewares/checkAuth.php';
+    require '../../../middlewares/connection.php';
+    require_once '../../../middlewares/checkAuth.php';
 
     // Check if the user is authenticated
     if (!isCustomerAuthenticated()) {
         // Redirect to the login page or display a message
-        header("Location: customer-login.php");
+        header("Location: ../customer-login.php");
         exit();
     }
 
@@ -18,7 +18,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="../../styles/customer-dashboard.css">
+    <link rel="stylesheet" href="../../../styles/customer-dashboard.css">
 </head>
 <body>
 
@@ -43,17 +43,15 @@
 
                 <ul class="nav-items-lists">
 
-                    <li class="nav-item nav-home active"><a href="./dashboard.php">Home</a></li>
+                    <li class="nav-item nav-home active"><a href="#">Dashboard</a></li>
 
-                    <li class="nav-item nav-customer_requests"><a href="../manager-service-requests/manager-service-requests.php">Requests History</a></li>
+                    <li class="nav-item nav-customer_requests"><a href="../customer-request-history/customer-request-history.php">Requests History</a></li>
 
-                    <li class="nav-item nav-mechanics"><a href="../manager-mechanics/manager-mechanics.php">Spare Parts</a></li>
+                    <li class="nav-item nav-mechanics"><a href="../customer-spare-parts/customer-spare-parts.php">Spare Parts</a></li>
 
-                    <li class="nav-item nav-drivers"><a href="../manager-drivers/manager-drivers.php">Servicing Status</a></li>
+                    <li class="nav-item nav-inventory"><a href="../customer-suggestion-issue/customer-suggestion-issue.php">Suggestion / Issues</a></li>
 
-                    <li class="nav-item nav-inventory"><a href="../manager-inventory/manager-inventory.php">Suggesion / Issues</a></li>
-
-                    <li class="nav-item logout"><a href="../../middlewares/logout.php">Logout</a></a></li>
+                    <li class="nav-item logout"><a href="../../../middlewares/logout.php">Logout</a></a></li>
 
                 </ul>
 
@@ -85,7 +83,7 @@
 
                     <?php 
                     
-                        require '../../middlewares/connection.php';
+                        require '../../../middlewares/connection.php';
 
                         // Query
                         $sql_query_to_get_service_centers = "SELECT `name`, `location`, `slots`, `contact_number` FROM servicecenter";
@@ -163,7 +161,7 @@
                         echo "no results found";
                        };
 
-                       echo $servcing_status;
+                        // echo $servcing_status
 
                     ?>
                 </p>

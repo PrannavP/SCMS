@@ -52,7 +52,7 @@ x<?php
             $_SESSION["customer"]["auth"] = true;
 
             // redirect to customer dashboard
-            header("Location: ../pages/customer/customer.php");
+            header("Location: ../pages/customer/dashboard/customer.php");
         } else {
             echo "<p>Incorrect customer details</p>";
             header("refresh:3, URL=../pages/customer/customer-login.php");
