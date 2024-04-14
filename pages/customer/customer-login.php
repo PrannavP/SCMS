@@ -35,7 +35,7 @@
             </div>
 
             <center><button id="customer-login" name="customer-login">Login</button></center>
-            <center><p class="create-account-text"><a href="./register-customer/register-customer.php">Create account here</a></p></center>
+            <center><p class="create-account-text"><a href="../customer/register-customer/register-customer.html">Create account here</a></p></center>
 
         </form>
 

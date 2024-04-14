@@ -7,8 +7,8 @@
 }
 
 body{
-    background-color: #F6F7EB;
-    color: #393E41;
+    background-color: #2C3E50;
+    color: #EDF6F9;
 }
 
 header{
@@ -18,35 +18,41 @@ header{
 }
 
 main{
-    padding: 2%;
-    margin-left: 38vw;
-    margin-top: 8%;
-    width: 300px;
+    padding: 0.7% 2% 1% 2%;
+    margin-left: 1.5vw;
+    margin-top: 3%;
+    width: 320px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    background-color: #5183A5;
     border: 1px solid rgba(61, 59, 59, 0.477);
-    box-shadow: 6px 6px #535b60;
+}
+
+form{
+    margin-left: 16px;
 }
 
 .form-title{
     font-size: 20px;
-}
-
-.fullname,.phonenumber,.model,.email, .password{
-    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 input{
-    margin-top: 6px;
+    margin-top: 5px;
     width: 270px;
     height: 25px;
     padding-left: 4px;
     font-weight: 400;
     font-size: 15px;
+    margin-bottom: 10px;
 }
 
 select{
-    width: 270px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: 275px;
     height: 25px;
 }
 
@@ -54,11 +60,18 @@ button{
     padding: 6px;
     cursor: pointer;
     font-weight: bold;
-    background-color: #e28b7d;
-    color: #3e4448;
+    background-color: #E74C3C;
+    color: #2A2A2A;
     outline: none;
     border: none;
     margin-top: 20px;
     margin-bottom: 20px;
     font-size: 19px;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+    font-weight: 300;
+    font-size: 15px;
 }
