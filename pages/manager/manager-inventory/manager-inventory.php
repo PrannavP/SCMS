@@ -24,7 +24,7 @@
 
     <header>
 
-        <h2>Service Center</h2>
+        <h2>SERVEASE</h2>
 
     </header>
 
@@ -84,7 +84,7 @@
             <table border="1">
 
                 <tr>
-                    <th>ID</th>
+                    <th>Part Number</th>
                     <th>Part Name</th>
                     <th>In Stock</th>
                     <th>Price</th>

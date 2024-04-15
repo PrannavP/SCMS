@@ -24,7 +24,7 @@
 
     <header>
 
-        <h2>Service Center</h2>
+        <h2>SERVEASE</h2>
 
     </header>
 

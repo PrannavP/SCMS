@@ -81,3 +81,69 @@ ul > li:last-child {
     text-align: center;
     padding-top: 2px;
 }
+
+/* Service Requests Style */
+
+.spareparts-container{
+    position: absolute;
+    top: 8%;
+    left: 18.4%;
+    background-color: #23313F;
+    width: 78.2vw;
+    height: 87vh;
+    border-radius: 20px;
+    padding: 10px;
+    padding-left: 1.2%;
+}
+
+.spareparts-container > h2{
+    margin-left: 0.5%;
+    font-size: 26px;
+    margin-bottom: 1.2%;
+}
+
+.spareparts-table{
+    margin-top: 2%x ;
+}
+
+/* Lists Table Style */
+table {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-left: -0.3%;
+}
+
+th{
+    padding: 0.5%;
+}
+
+td, th {
+    /* border: 1px solid #dddddd; */
+    text-align: left;
+    padding: 8px;
+}
+
+tr{
+    background-color: #5183A5;
+}
+
+th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #5183A5;
+    color: white;
+}
+
+td{
+    font-weight: 500;
+    color: white;
+    padding: 15px;
+    padding-left: 8px;
+}
+
+/* Table Border */
+table, tr, td {
+    border: 2px solid black;
+}

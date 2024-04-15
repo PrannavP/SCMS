@@ -102,6 +102,10 @@ ul > li:last-child {
     margin-bottom: 1.2%;
 }
 
+.requests-table{
+    margin-top: 2%;
+}
+
 /* Lists Table Style */
 table {
     font-family: Arial, sans-serif;

@@ -24,7 +24,7 @@
 
     <header>
 
-        <h2>Service Center</h2>
+        <h2>SERVEASE</h2>
 
     </header>
 
@@ -64,6 +64,46 @@
         <p class="user-profile-text">Customer</p>
 
     </div>
+
+    <article class="spareparts-container">
+
+		<h2>Spare Parts</h2>
+
+		<div class="spareparts-table">
+
+			<table border="1">
+
+				<tr>
+					<th>Part Number</th>
+					<th>Part Name</th>
+					<th>Price</th>
+					<th>Price with VAT</th>
+				</tr>
+
+				<?php
+
+					$sql_query_to_get_parts_list= "SELECT `item_number`, `item_name`, `item_price`, `service_center` FROM `inventory`";
+					// execute the query
+					$service_requests = mysqli_query($conn, $sql_query_to_get_parts_list);
+
+					while ($rows = mysqli_fetch_assoc($service_requests)) {
+                        $price_with_vat = $rows['item_price'] * 1.13;
+				?>
+
+				<tr>
+					<td><?php echo $rows['item_number'] ?></td>
+					<td><?php echo $rows['item_name'] ?></td>
+					<td><?php echo $rows['item_price'] ?></td>
+					<td><?php echo $price_with_vat ?></td>
+				</tr>
+
+				<?php } ?>
+
+			</table>
+
+		</div>
+
+	</article>
     
 </body>
 </html>
