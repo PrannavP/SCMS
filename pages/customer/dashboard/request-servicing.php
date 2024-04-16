@@ -23,7 +23,7 @@
 
         $sql_query_to_request_servicing = "INSERT INTO `service_request`(`requested_by`, `email`, `service_center`, `model`, `details`, `contact_number`, `requested_date`, `requested_time`) VALUES ('$customer_name','$customer_email','$service_center','$request_model','$request_details','$request_contact_number','$request_date','$request_time')";
 
-        echo $sql_query_to_request_servicing;
+        // echo $sql_query_to_request_servicing;
         
         mysqli_query($connection, $sql_query_to_request_servicing);
 

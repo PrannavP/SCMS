@@ -31,6 +31,16 @@
 
     generateReports($conn, $id);
 
+    function increaseAvailableServicingSlot($connection){
+        $service_center = $_SESSION["manager"]["service-center"];
+
+        $sql_query_to_increase_slot = "UPDATE `servicecenter` SET `available_slot` = `available_slot` + 1 WHERE `name` = '$service_center'";
+
+        mysqli_query($connection, $sql_query_to_increase_slot);
+    };
+
+    increaseAvailableServicingSlot($conn);
+
     header("Location: manager-service-requests.php");
 
 ?>

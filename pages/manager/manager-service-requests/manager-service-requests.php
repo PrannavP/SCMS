@@ -52,6 +52,8 @@
 
 					<li class="nav-item nav-billing"><a href="../manager-billing/manager-billing.php">Billing</a></li>
 
+					<li class="nav-item nav-message"><a href="../manager-message/manager-message.php">Messages</a></li>
+
 					<li class="nav-item logout"><a href="../../../middlewares/logout.php">Logout</a></a></li>
 
 				</ul>

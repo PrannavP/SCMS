@@ -64,6 +64,77 @@
         <p class="user-profile-text">Customer</p>
 
     </div>
+
+    <article class="suggestion_issue-section">
+
+		<h2>Suggestion / Issues</h2>
+
+		<div class="section-title">
+
+            <h4>If you have any suggestions or complaints regarding the service center, then please feel free to tell us.</h4>
+
+        </div>
+
+        <div class="form-section">
+
+            <form action="./send-message.php" method="post">
+
+                <div class="name-field">
+
+                    <label for="name">Full Name</label><br>
+
+                    <input type="text" name="full_name" id="full_name">
+
+                </div>
+
+                <div class="email_phone-field">
+
+                    <label for="email_phone">Email / Phone</label><br>
+
+                    <input type="text" name="email_phone" id="email_phone">
+
+                </div>  
+
+                <div class="service_center-field">
+
+                    <label for="service_center">Service Center</label><br>
+
+                    <select name="service_center" id="service_center">
+                            <option>Choose the service center</option>
+                            <?php
+                                require '../../../middlewares/connection.php';
+
+                                $query_to_get_all_service_centers = "SELECT `name` FROM `servicecenter`";
+
+                                $service_center_lists = mysqli_query($conn, $query_to_get_all_service_centers);
+
+                                while($service_center_list = mysqli_fetch_assoc($service_center_lists)){
+                                    echo "<option>" . $service_center_list['name'] . "</option>";
+                                }
+                                ?>
+                    </select>
+
+                </div>
+
+                <div class="message-field">
+
+                    <label for="message">Message</label><br>
+
+                    <textarea name="message" id="message" cols="40" rows="5"></textarea>
+
+                </div>
+
+                <div class="submit-field">
+
+                    <button class="submit-button">Send</button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+	</article>
     
 </body>
 </html>

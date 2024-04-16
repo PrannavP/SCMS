@@ -81,3 +81,91 @@ ul > li:last-child {
     text-align: center;
     padding-top: 2px;
 }
+
+/* suggestion_issue-section */
+
+.suggestion_issue-section{
+    position: absolute;
+    top: 8%;
+    left: 18.4%;
+    background-color: #23313F;
+    width: 78.2vw;
+    height: 87vh;
+    border-radius: 20px;
+    padding: 10px;
+    padding-left: 1.2%;
+}
+
+.suggestion_issue-section > h2{
+    margin-left: 0.5%;
+    font-size: 26px;
+    margin-bottom: 1.2%;
+}
+
+h4{
+    font-size: 18px;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.form-section{
+    display: flex;
+    justify-content: center;
+    background-color: #5183A5;
+    width: 42vw;
+    height: 50vh;
+    margin-top: 2%;
+    margin-left: 20%;
+    border-radius: 25px;
+}
+
+form{
+    /* margin-top: 10px; */
+    padding: 10px;
+}
+
+textarea{
+    resize: none;
+}
+
+input{
+    margin-top: 5px;
+    margin-bottom: 8px;
+    width: 275px;
+    height: 25px;
+    padding: 2px;
+    font-size: 16px;
+}
+
+select{
+    margin-top: 5px;
+    margin-bottom: 8px;
+    width: 275px;
+    height: 23px;
+    font-size: 16px;
+}
+
+option{
+    font-size: 16px;
+}
+
+textarea{
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 8px;
+    padding: 4px;
+}
+
+.submit-button{
+    width: 105px;
+    height: 30px;
+    padding: 4px 6px 4px 6px;
+    cursor: pointer;
+    background-color: #E74C3C;
+    outline: none;
+    border: 1px;
+}
+
+label{
+    font-size: 18px;
+}
