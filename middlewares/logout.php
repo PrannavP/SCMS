@@ -12,5 +12,9 @@
         $_SESSION['customer']["auth"] = false;
         header('Location: ../pages/customer/customer-login.php');
         exit();
-}
+    } elseif ($user_type === "admin"){
+        $_SESSION["admin"]["auth"] = false;
+        header("Location: ../pages/admin/admin-login.html");
+        exit();
+    }
 ?>

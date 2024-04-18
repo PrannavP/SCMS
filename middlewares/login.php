@@ -1,4 +1,4 @@
-x<?php
+<?php
     require './connection.php';
 
     // login function
@@ -59,9 +59,42 @@ x<?php
         }
     }
 
+    // admin login
+
+    function admin_login($conn){
+        $admin_email = $_POST["email"];
+        $admin_password = $_POST["psw"];
+
+        // sql query
+        $sql_query_to_admin_login = "SELECT `type` FROM `admin` WHERE email = '$admin_email' AND password = '$admin_password'";
+        $result = mysqli_query($conn, $sql_query_to_admin_login);
+
+        if($result && mysqli_num_rows($result) > 0){
+            // fetching data from sql
+            $row = mysqli_fetch_assoc($result);
+
+            // starting session
+            session_start();
+
+            $_SESSION = array();
+            $_SESSION["user_type"] = "admin";
+            $_SESSION["admin"]["name"] = "Admin";
+            $_SESSION["admin"]["email"] = $row["email"];
+            $_SESSION["admin"]["auth"] = true;
+
+            // redirect to admin dashboard
+            header("Location: ../pages/admin/dashboard/admin-dashboard.php");
+        }else{
+            echo "<p>Incorrect admin details</p>";
+            // header("Location: ../pages/admin/admin-login.html");
+        };
+    };
+
     if (isset($_POST['manager-login'])) {
         manager_login($conn);
     } elseif (isset($_POST["customer-login"])) {
         customer_login($conn);
+    }elseif (isset($_POST["admin-login"])){
+        admin_login($conn);
     }
 ?>

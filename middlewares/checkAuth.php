@@ -18,4 +18,12 @@
             return false;
         };
     };
+
+    function isAdminAuthenticated(){
+        if(isset($_SESSION['admin']["auth"]) && $_SESSION['admin']["auth"] === true){
+            return true;
+        }else{
+            return false;
+        };
+    };
 ?>
