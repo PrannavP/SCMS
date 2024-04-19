@@ -19,14 +19,11 @@
 
         $sql_query_to_create_new_manager = "INSERT INTO `manager`(`fullname`, `contact_number`, `email`, `password`, `service_center`) VALUES ('$manager_full_name','$manager_contactnumber','$manager_email','$manager_password','$manager_servicecenter')";
 
-        // mysqli_query($connection, $sql_query_to_create_new_manager);
-
-        echo $manager_full_name;
-        echo $manager_contactnumber;
+        mysqli_query($connection, $sql_query_to_create_new_manager);
     };
 
     create_new_manager_account($conn);
 
-    // header("Location: ./admin-dashboard.php");
+    header("Location: ./admin-dashboard.php");
 
 ?>

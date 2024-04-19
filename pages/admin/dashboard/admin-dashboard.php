@@ -6,7 +6,7 @@
     // Check if the user is authenticated
     if (!isAdminAuthenticated()) {
         // Redirect to the login page or display a message
-        header("Location: ../../../index.html");
+        header("Location: ../admin-login.html");
         exit();
     }
 
@@ -43,6 +43,8 @@
 
         <p class="user-profile-text">Admin</p>
 
+        <a href="../../../middlewares/logout.php">Logout</a>
+
     </div>
 
     <article class="dashboard">
@@ -53,7 +55,7 @@
 
             <h3 class="create-manager-heading">Create Manager's Account</h3>
 
-            <form action="" method="post">
+            <form action="create-manager.php" method="post">
 
                 <div class="fullname-field">
 
@@ -122,7 +124,7 @@
 
             <h3 class="create-service_center-heading">Create New Service Center</h3>
 
-            <form action="create-manager.php" method="post">
+            <form action="./create-service_center.php" method="post">
 
                 <div class="service_center-name-field">
 
