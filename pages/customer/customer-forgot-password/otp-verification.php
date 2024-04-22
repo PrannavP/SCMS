@@ -4,29 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ServEase</title>
-    <link rel="stylesheet" href="../../../styles/customer-otp-verification.css">
+    <link rel="stylesheet" href="../../../styles/customer-otp-verification-page.css">
 </head>
 <body>
 
-    <div class="container">
+    <header>
+
+        <h2>SERVEASE</h2>
+
+    </header>
+
+    <main>
 
         <form action="./verify-otp-logic.php" method="post">
 
-            <h3>Password Reset OTP Verification</h3>
+            <center>
 
-            <div class="otp-field">
+                <h3>Password Reset OTP Verification</h3>
 
-                <label for="otp">OTP</label><br>
+                <div class="otp-field">
 
-                <input type="number" name="otp" id="otp">
+                    <label for="otp">Enter the code that was sent to your email</label><br>
 
-            </div>
+                    <input type="number" name="otp" id="otp" autocomplete="off">
 
-            <button>Submit</button>
+                </div>
+
+                <button>Verify</button>
+
+            </center>
 
         </form>
 
-    </div>
+    </main>
     
 </body>
 </html>
