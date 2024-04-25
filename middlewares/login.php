@@ -1,4 +1,5 @@
 <?php
+
     require './connection.php';
 
     // login function
@@ -28,36 +29,51 @@
             // echo "<p>Incorrect details.</p>";
             // header("refresh:3, URL= ../index.html");
         }
-    }
+    };
 
     function customer_login($conn) {
         $email = $_POST["email"];
         $password = $_POST["psw"];
 
-        // sql query
-        $sql = "SELECT full_name from customer WHERE email = '$email' and password = '$password'";
+        // SQL query to get the hashed password from the database
+        $sql = "SELECT `full_name`, `email`, `password` FROM customer WHERE `email` = '$email'";
         $result = mysqli_query($conn, $sql);
 
         if ($result && mysqli_num_rows($result) > 0) {
-            // fetching data from sql
+            // Fetching data from SQL
             $row = mysqli_fetch_assoc($result);
+            $hashed_password = $row['password'];
 
-            // starting session
-            session_start();
-            
-            $_SESSION = array(); // Clear existing session data
-            $_SESSION["user_type"] = "customer";
-            $_SESSION["customer"]["name"] = $row['full_name'];
-            $_SESSION["customer"]["email"] = $email;
-            $_SESSION["customer"]["auth"] = true;
+            echo "Passed first if statement";
 
-            // redirect to customer dashboard
-            header("Location: ../pages/customer/dashboard/customer.php");
+            // test
+            $isPasswordVerified = password_verify($password, $hashed_password);
+            var_dump($isPasswordVerified);
+
+            // Verify the password
+            if($isPasswordVerified) {
+                echo "Passed second if statement";
+                // Starting session
+                session_start();
+                
+                $_SESSION = array(); // Clear existing session data
+                $_SESSION["user_type"] = "customer";
+                $_SESSION["customer"]["name"] = $row['full_name'];
+                $_SESSION["customer"]["email"] = $email;
+                $_SESSION["customer"]["auth"] = true;
+
+                // Redirect to customer dashboard
+                header("Location: ../pages/customer/dashboard/customer.php");
+            } else {
+                echo "<p>Incorrect customer details</p>";
+                echo "error";
+                header("refresh:3, URL=../pages/customer/customer-login.php");
+            }
         } else {
             echo "<p>Incorrect customer details</p>";
             header("refresh:3, URL=../pages/customer/customer-login.php");
         }
-    }
+    };
 
     // admin login
 

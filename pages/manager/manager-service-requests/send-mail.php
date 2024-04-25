@@ -137,7 +137,7 @@
     function decreaseAvailableServicingSlot($connection){
         $service_center = $_SESSION["manager"]["service-center"];
 
-        $sql_query_to_decrease_available_slot = "UPDATE `servicecenter` SET `available_slot` = `available_slot` - 1 WHERE `name` = '$service_center'";
+        $sql_query_to_decrease_available_slot = "UPDATE `servicecenter` SET `available_slots` = `available_slots` - 1 WHERE `name` = '$service_center'";
 
         mysqli_query($connection, $sql_query_to_decrease_available_slot);
     };

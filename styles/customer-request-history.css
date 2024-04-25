@@ -74,12 +74,13 @@ ul > li:last-child {
 
 .user-profile > p:first-child{
     text-align: center;
-    padding-top: 5px;
+    padding-top: 8px;
 }
 
 .user-profile > p:last-child{
     text-align: center;
-    padding-top: 2px;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 /* Service Requests Style */

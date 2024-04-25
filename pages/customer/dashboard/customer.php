@@ -86,7 +86,7 @@
                         require '../../../middlewares/connection.php';
 
                         // Query
-                        $sql_query_to_get_service_centers = "SELECT `name`, `location`, `slots`, `contact_number` FROM servicecenter";
+                        $sql_query_to_get_service_centers = "SELECT `name`, `location`, `available_slots`, `contact_number` FROM servicecenter ORDER BY `available_slots` DESC";
 
                         // Execute the query
                         $service_centers = mysqli_query($conn, $sql_query_to_get_service_centers);
@@ -107,7 +107,7 @@
 
                             <div class="right-column">
 
-                                <p class="service-center_slots">Slots: <?php echo $rows["slots"] ?></p><br>
+                                <p class="service-center_slots">Slots: <?php echo $rows["available_slots"] ?></p><br>
 
                                 <p class="service-center_contact">Contact: <?php echo $rows["contact_number"] ?></p>
 

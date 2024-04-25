@@ -8,7 +8,7 @@
     $email = $_SESSION["reset_requested_email"];
     $new_password = $_POST["password"];
 
-    $hashed_password = password_hash($new_password, PASSWORD_BCRYPT);
+    $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
 
     function changeCustomerPassword($connection, $email, $password){
         // update the password
