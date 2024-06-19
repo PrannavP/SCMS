@@ -19,46 +19,86 @@ header{
 
 main{
     padding: 2%;
-    margin-left: 1.5vw;
-    margin-top: 3%;
-    width: 300px;
+    margin-left: 36vw;
+    margin-top: 4%;
+    width: 400px;
+    height: 245px;
     display: flex;
     justify-content: center;
+    /* border: 1px solid rgba(61, 59, 59, 0.477); */
     background-color: #5183A5;
-    border: 1px solid rgba(61, 59, 59, 0.477);
+    border-radius: 20px;
 }
 
 .form-title{
     font-size: 20px;
+    color: #2A2A2A;
+    /* margin-left: 15%; */
 }
 
 .email, .password{
     margin-top: 20px;
+    color: #2A2A2A;
 }
 
 input{
     margin-top: 6px;
-    width: 270px;
-    height: 25px;
+    width: 290px;
+    height: 36px;
     padding-left: 4px;
     font-weight: 400;
-    font-size: 15px;
+    background-color: #D9D9D9;
+    font-size: 17px;
+    outline: none;
+    border: none;
 }
 
-button{
+#customer-login{
     padding: 6px;
     cursor: pointer;
     font-weight: bold;
-    background-color: #e28b7d;
-    color: #3e4448;
+    background-color: #E74C3C;
+    color: #2A2A2A;
     outline: none;
     border: none;
     margin-top: 20px;
     margin-bottom: 20px;
     font-size: 19px;
+    width: 145px;
+    height: 45px;
 }
 
 a{
     text-decoration: none;
     color: inherit;
+}
+
+.forgot-password{
+    margin-left: 50%;
+    font-weight: 400;
+}
+
+.buttons-container{
+    /* margin-top: 20px; */
+    margin-left: 40%;
+}
+
+.forgot-password-button{
+    margin-right: 7%;
+}
+
+.control-button{
+    padding: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    color: #2A2A2A;
+    outline: none;
+    border: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    width: 145px;
+    height: 45px;
+    background-color: #e28b7d;
+    border-radius: 10px;
 }

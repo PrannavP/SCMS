@@ -18,7 +18,7 @@
 
         <form action="../../middlewares/login.php" method="post">
 
-            <h4 class="form-title">Customer Login</h4>
+            <center><h4 class="form-title">Customer Login</h4></center>
 
             <div class="email">
 
@@ -35,12 +35,31 @@
             </div>
 
             <center><button id="customer-login" name="customer-login">Login</button></center>
-            <center><p class="create-account-text"><a href="../customer/register-customer/register-customer.html">Create account here</a></p></center><br>
-            <center><p class="forgot-password"><a href="./customer-forgot-password/customer-forgot-password.html">Forgot Password?</a></p></center>
+
+            <!-- <p class="forgot-password"><a href="./customer-forgot-password/customer-forgot-password.html">Forgot Password?</a></p><br> -->
 
         </form>
 
     </main>
+
+    <!-- <center><p class="create-account-text"><a href="../customer/register-customer/register-customer.html">Create Account</a></p></center> -->
+    <div class="buttons-container">
+
+        <button class="forgot-password-button control-button">
+
+            <a href="./customer-forgot-password/customer-forgot-password.html">Forgot Password</a>
+
+        </button>
+
+        <button class="create-account-button control-button">
+
+            <a href="../customer/register-customer/register-customer.html">
+                Create Account
+            </a>
+
+        </button>
+
+    </div>
     
 </body>
 </html>

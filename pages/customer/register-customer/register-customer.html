@@ -20,66 +20,96 @@
 
             <h3 class="form-title">Create a new account</h3>
 
-            <div class="fullname">
+            <div class="input-containers">
 
-                <label for="fullname">Full Name:</label><br>
-                <input type="text" name="fullname" id="fullname" required>
+                <div class="fullname">
 
-            </div>
-
-            <div class="phonenumber">
-
-                <label for="pnumber">Phone Number:</label><br>
-                <input type="number" name="pnumber" id="pnumber" required>
-
-            </div>
-
-            <div class="email">
-
-                <label for="email">Email:</label><br>
-                <input type="email" name="email" id="email" required>
-
-            </div>
-
-            <div class="model">
-
-                <label for="model">Model: </label><br>
-                <select name="model" id="model" required>
-                    <option value="" selected>SELECT YOUR MODEL</option>
-                    <option value="TVS-NTORQ-REFI">TVS-NTORQ-REFI</option>
-                    <option value="TVS-NTORQ">TVS-NTORQ</option>
-                    <option value="TVS-RAIDER">TVS-RAIDER</option>
-                    <option value="TVS-APACHE-RTR">TVS-APACHE-RTR</option>
-                    <option value="TVS-JUPITER">TVS-JUPITER</option>
-                    <option value="TVS-RAEDON">TVS-RAEDON</option>
-                </select>
-
-            </div>
-
-            <div class="password">
-
-                <label for="psw">Password:</label><br>
-                <input type="password" name="psw" id="psw" required>
-
-            </div>
-
-            <div class="confirm-password">
-
-                <label for="cpsw">Confirm Password:</label>
-                <input type="password" name="cpsw" id="cpsw" required>
+                    <label for="fullname">Full Name:</label><br>
+                    <input type="text" name="fullname" id="fullname" required>
+    
+                </div>
+    
+                <div class="phonenumber">
+    
+                    <label for="pnumber">Phone Number:</label><br>
+                    <input type="number" name="pnumber" id="pnumber" required>
+    
+                </div>
+    
+                <div class="email">
+    
+                    <label for="email">Email:</label><br>
+                    <input type="email" name="email" id="email" required>
+    
+                </div>
+    
+                <div class="model">
+    
+                    <label for="model">Model: </label><br>
+                    <select name="model" id="model" required>
+                        <option value="" selected>SELECT YOUR MODEL</option>
+                        <option value="TVS-NTORQ-REFI">TVS-NTORQ-REFI</option>
+                        <option value="TVS-NTORQ">TVS-NTORQ</option>
+                        <option value="TVS-RAIDER">TVS-RAIDER</option>
+                        <option value="TVS-APACHE-RTR">TVS-APACHE-RTR</option>
+                        <option value="TVS-JUPITER">TVS-JUPITER</option>
+                        <option value="TVS-RAEDON">TVS-RAEDON</option>
+                    </select>
+    
+                </div>
+    
+                <div class="password">
+    
+                    <label for="psw">Password:</label><br>
+                    <input type="password" name="psw" id="psw" required>
+    
+                </div>
+    
+                <div class="confirm-password">
+    
+                    <label for="cpsw">Confirm Password:</label>
+                    <input type="password" name="cpsw" id="cpsw" required>
+    
+                </div>
 
             </div>
             
 
             <center><button id="customer-register" name="customer-register">Register</button></center>
 
-            <center><a href="../customer-login.php">Already have account?</a></center>
+            <hr>
+
+            <center><button class="already-have-account-btn">
+                <a href="../customer-login.php">Already have account?</a>
+            </button></center>
 
         </form>
 
     </main>
 
-    <!-- <script src="../../../scripts/customer-register.js"></script> -->
+    <div class="error-messages">
+
+        <div class="phonenumber-error-message error-message">
+
+            <p class="message">Invalid phone number</p>
+
+        </div>
+
+        <div class="email-error-message error-message">
+
+            <p class="message">Invalid email</p>
+
+        </div>
+
+        <div class="password-error-message error-message">
+
+            <p class="message">Password must be greater than 10 <br>and must contain special characters.</p>
+
+        </div>
+
+    </div>
+
+    <script src="../../../scripts/customer-register.js"></script>
     
 </body>
 </html>

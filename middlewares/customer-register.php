@@ -15,6 +15,8 @@
 
         if(empty($name) && empty($pnumber) && empty($email) && empty($model) && empty($psw)){
             echo "Please enter all the fields";
+        }elseif(strlen($password) < 10 && strlen($c_password) < 10){
+            echo "Password length must me greater than 10";
         }else{
             // echo "Forms are field";
             registerCustomer($conn, $name, $pnumber, $email, $model, $psw);
@@ -37,24 +39,5 @@
 
         header("Location: ../pages/customer/customer-login.php");
     };
-
-    function loggingFormInputs($name, $pnumber, $email, $model, $password, $c_psw){
-        echo $name . "<br>";
-        echo $pnumber . "<br>";
-        echo $email . "<br>";
-        echo $model . "<br>";
-        echo $password . "<br>";
-        echo $c_psw . "<br>";
-
-        // hashed passwords
-        $hashed_password = password_hash($password, PASSWORD_BCRYPT);
-        $hashed_confirm_password = password_hash($c_psw, PASSWORD_BCRYPT, );
-
-        echo $hashed_password . "<br>";
-        echo $hashed_confirm_password . "<br>";
-
-    };
-
-    // loggingFormInputs($fullname, $phone_number, $email, $model, $password, $c_password);
 
 ?>

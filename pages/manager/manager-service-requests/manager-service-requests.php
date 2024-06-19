@@ -46,7 +46,7 @@
 
 					<li class="nav-item nav-mechanics"><a href="../manager-mechanics/manager-mechanics.php">Mechanics</a></li>
 
-                    <li class="nav-item nav-drivers"><a href="../manager-drivers/manager-drivers.php">Drivers</a></li>
+                    <!-- <li class="nav-item nav-drivers"><a href="../manager-drivers/manager-drivers.php">Drivers</a></li> -->
 
                    	<li class="nav-item nav-inventory"><a href="../manager-inventory/manager-inventory.php">Inventory</a></li>
 
@@ -118,9 +118,9 @@
 					<?php 
 						if($rows['servicing_status'] == "Pending Approval"){
 							echo '<td style="width: 16%;">';
-							echo '<button class="acceptBtn actionBtn" id="acceptButton" onclick="openAcceptModal(' . $rows['request_id'] . ', \'' . $rows['details'] . '\', \'' . $rows['amount'] . '\')">Accept</button>';
-							echo '<button class="declineBtn actionBtn" id="declineButton"><a href="./delete-request.php?request_id=' . $rows['request_id'] . '">Decline</a></button>';
-							echo '</td>';
+							echo '<button class="acceptBtn actionBtn" id="acceptButton' . htmlspecialchars($rows['request_id'], ENT_QUOTES) . '" onclick="openAcceptModal(' . htmlspecialchars($rows['request_id'], ENT_QUOTES) . ', \'' . addslashes(htmlspecialchars($rows['details'], ENT_QUOTES)) . '\', \'' . htmlspecialchars($rows['amount'], ENT_QUOTES) . '\')">Accept</button>';
+							echo '<button class="declineBtn actionBtn" id="declineButton' . htmlspecialchars($rows['request_id'], ENT_QUOTES) . '"><a href="./delete-request.php?request_id=' . htmlspecialchars($rows['request_id'], ENT_QUOTES) . '">Decline</a></button>';
+							echo '</td>';							
 						}elseif($rows['servicing_status'] == "Completed Servicing"){
 							echo '<td style="width: 16%;">';
 							echo '<button style="margin-left: 28%;" class="actionBtn acceptBtn" id="viewDetailsButton" onclick="openDetailsModal(' . $rows['request_id'] . ', \'' . $rows['details'] . '\', \'' . $rows['amount'] . '\', \'' . $rows['servicing_status'] . '\', \'' . $rows['parts'] . '\')">Details</button>';

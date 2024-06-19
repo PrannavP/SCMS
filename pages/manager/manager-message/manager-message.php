@@ -39,17 +39,17 @@
 
 					<li class="nav-item nav-home"><a href="../dashboard/dashboard.php">Home</a></li>
 
-					<li class="nav-item nav-customer_requests active"><a href="../manager-service-requests/manager-service-requests.php">Customer Requests</a></li>
+					<li class="nav-item nav-customer_requests"><a href="../manager-service-requests/manager-service-requests.php">Customer Requests</a></li>
 
 					<li class="nav-item nav-mechanics"><a href="../manager-mechanics/manager-mechanics.php">Mechanics</a></li>
 
-                    <li class="nav-item nav-drivers"><a href="../manager-drivers/manager-drivers.php">Drivers</a></li>
+                    <!-- <li class="nav-item nav-drivers"><a href="../manager-drivers/manager-drivers.php">Drivers</a></li> -->
 
                    	<li class="nav-item nav-inventory"><a href="../manager-inventory/manager-inventory.php">Inventory</a></li>
 
 					<li class="nav-item nav-billing"><a href="../manager-billing/manager-billing.php">Billing</a></li>
 
-					<li class="nav-item nav-message"><a href="#">Messages</a></li>
+					<li class="nav-item nav-message active"><a href="#">Messages</a></li>
 
 					<li class="nav-item logout"><a href="../../../middlewares/logout.php">Logout</a></a></li>
 

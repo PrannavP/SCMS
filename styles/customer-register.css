@@ -18,15 +18,20 @@ header{
 }
 
 main{
-    padding: 0.7% 2% 1% 2%;
-    margin-left: 1.5vw;
-    margin-top: 3%;
-    width: 320px;
+    padding: 0.7% 2% 0.5% 2%;
+    margin-left: 35vw;
+    margin-top: 1%;
+    width: 420px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #5183A5;
     border: 1px solid rgba(61, 59, 59, 0.477);
+    border-radius: 20px;
+}
+
+.input-containers{
+    margin-left: 12.5%;
 }
 
 form{
@@ -40,20 +45,26 @@ form{
 }
 
 input{
-    margin-top: 5px;
-    width: 270px;
-    height: 25px;
+    margin-top: 6px;
+    width: 290px;
+    height: 36px;
     padding-left: 4px;
     font-weight: 400;
-    font-size: 15px;
+    background-color: #D9D9D9;
+    font-size: 17px;
+    outline: none;
+    border: none;
     margin-bottom: 10px;
+    color: #2A2A2A;
 }
 
 select{
     margin-top: 5px;
     margin-bottom: 10px;
-    width: 275px;
-    height: 25px;
+    width: 290px;
+    height: 36px;
+    cursor: pointer;
+    background-color: #D9D9D9;
 }
 
 button{
@@ -64,8 +75,8 @@ button{
     color: #2A2A2A;
     outline: none;
     border: none;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 15px;
     font-size: 19px;
 }
 
@@ -74,4 +85,28 @@ a{
     color: inherit;
     font-weight: 300;
     font-size: 15px;
+}
+
+.error-messages{
+    position: absolute;
+    top: 3%;
+    right: 1%;
+}
+
+.error-message{
+    cursor: pointer;
+    padding: 6px;
+    margin-top: 10px;
+    border: 2px solid red;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.already-have-account-btn{
+    margin-top: 20px;
+    background-color: #e28b7d;
 }
