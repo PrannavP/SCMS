@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body{
+    background-color: #2C3E50;
+    color: #FFFFFF;
+    height: 100vh;
+}
+
+header{
+    padding: 20px;
+    font-size: 19px;
+    font-weight: bolder;
+}
+
+/* Left Navigation Bar */
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+aside{
+    margin-top: 1%;
+    padding: 10px;
+    background-color: #23313F;
+    display: inline-block;
+    width: 16%;
+    height: 69vh;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+li{
+    list-style-type: none;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-left: 5%;
+    margin-bottom: 20%;
+}
+
+li:hover{
+    cursor: pointer;
+}
+
+.active{
+    color: #929292;
+}
+
+ul > li:first-child{
+    margin-top: 10%;
+}
+
+ul > li:last-child {
+    margin-top: 67%;
+}
+
+/* User Profile Div */
+.user-profile{
+    width: 13%;
+    height: 75px;
+    background-color: #5183A5;
+    margin-left: 1.5%;
+    margin-top: 2%;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    color: #2A2A2A;
+    font-weight: 600;
+}
+
+.user-profile > p:first-child{
+    text-align: center;
+    padding-top: 8px;
+}
+
+.user-profile > p:last-child{
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.profile{
+    position: absolute;
+    top: 8%;
+    left: 18.4%;
+    background-color: #23313F;
+    width: 78.2vw;
+    height: 87vh;
+    border-radius: 20px;
+    padding: 10px;
+    padding-left: 1.2%;
+}
+
+.profie-icon-img{
+    width: 115px;
+    height: 115px;
+}
+
+.profile-section{
+    padding-top: 12px;
+    width: 350px;
+    margin-left: 32%;
+    text-align: center;
+}
+
+.section-text{
+    margin-top: 20px;
+}
+
+span{
+    font-weight: bold;
+    font-size: 17px;
+}
+
+button{
+    padding: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #E74C3C;
+    color: #2A2A2A;
+    outline: none;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 19px;
+}
+
+.profile-edit-button, .profile-change-password-button{
+    display: inline-block;
+}
+
+.edit-section{
+    /* padding-top: 12px; */
+    margin-top: 4%;
+    width: 420px;
+    margin-left: 30%;
+    text-align: center;
+}
+
+button{
+    margin-right: 10px;
+}

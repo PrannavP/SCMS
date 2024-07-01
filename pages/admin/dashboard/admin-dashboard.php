@@ -34,18 +34,29 @@
 
     </header>
 
-    <!-- side navigation bar --> 
-    <div class="user-profile">
+    <aside>
 
-        <p class="user-profile-text">
-            <?php echo $_SESSION["admin"]["email"] ?>
-        </p><br>
+        <nav class="side-nav-bar">
 
-        <p class="user-profile-text">Admin</p>
+            <div class="nav-items">
 
-        <a href="../../../middlewares/logout.php">Logout</a>
+                <ul class="nav-items-lists">
 
-    </div>
+                    <li class="nav-item nav-home active"><a href="./dashboard.php">Home</a></li>
+
+                    <li class="nav-item nav-admin-managers"><a href="#">Managers</a></li>
+
+                    <li class="nav-item nav-admin-service_centers"><a href="../admin-service-centers/admin-service-centers.php">Service Centers</a></li>
+
+                    <li class="nav-item logout"><a href="../../../middlewares/logout.php">Logout</a></a></li>
+
+                </ul>
+
+            </div>
+
+        </nav>
+
+    </aside>
 
     <article class="dashboard">
         

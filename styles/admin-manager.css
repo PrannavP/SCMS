@@ -60,9 +60,8 @@ ul > li:last-child {
     margin-top: 75%;
 }
 
-/* Dashboard Style */
-
-.dashboard{
+/* Service Center Style */
+.managers{
     position: absolute;
     top: 8%;
     left: 18.4%;
@@ -74,26 +73,69 @@ ul > li:last-child {
     padding-left: 1.2%;
 }
 
-.dashboard > h2{
+.managers > h2{
     margin-left: 0.5%;
     font-size: 26px;
     margin-bottom: 1.2%;
 }
 
-.create-manager-section{
-    display: inline-block;
-    width: 30%;
-    border: 2px solid white;
-    padding: 10px;
+
+/* Lists Table Style */
+table {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-left: -0.3%;
 }
 
-.create-servicing-section{
-    display: inline-block;
-    width: 30%;
-    border: 2px solid red;
-    padding: 10px;
+th{
+    padding: 0.5%;
 }
 
-button{
+td, th {
+    /* border: 1px solid #dddddd; */
+    text-align: left;
+    padding: 8px;
+}
+
+tr{
+    background-color: #5183A5;
+}
+
+th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #5183A5;
+    color: white;
+}
+
+td{
+    font-weight: 500;
+    color: white;
+    padding: 15px;
+    padding-left: 8px;
+}
+
+/* Table Border */
+table, tr, td {
+    border: 2px solid black;
+}
+
+/* Action Buttons */
+.actionBtn{
     cursor: pointer;
+    padding: 10px;
+    border: none;
+    margin-left: 6%;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.editBtn{
+    background-color: #1AEA6D;
+}
+
+.removeBtn{
+    background-color: #DD3636;
 }

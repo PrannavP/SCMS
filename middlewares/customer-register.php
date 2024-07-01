@@ -9,13 +9,13 @@
     $password = $_POST["psw"];
     $c_password = $_POST["cpsw"];
 
-    function formValidation($name, $pnumber, $email, $model, $psw){
+    function formValidation($name, $pnumber, $email, $model, $psw, $cpsw){
         // importing connection.php
         require './connection.php';
 
         if(empty($name) && empty($pnumber) && empty($email) && empty($model) && empty($psw)){
             echo "Please enter all the fields";
-        }elseif(strlen($password) < 10 && strlen($c_password) < 10){
+        }elseif(strlen($psw) < 10 && strlen($cpsw) < 10){
             echo "Password length must me greater than 10";
         }else{
             // echo "Forms are field";
@@ -24,7 +24,7 @@
         
     };
 
-    formValidation($fullname, $phone_number, $email, $model, $password);
+    formValidation($fullname, $phone_number, $email, $model, $password, $c_password);
 
     // function to register new customer
     function registerCustomer($conn, $name, $pnumber, $email, $model, $psw){

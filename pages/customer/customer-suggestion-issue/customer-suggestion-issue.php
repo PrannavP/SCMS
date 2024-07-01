@@ -45,6 +45,8 @@
 
                     <li class="nav-item nav-suggestion_issue active"><a href="../customer-suggestion-issue/customer-suggestion-issue.php">Suggestion / Issues</a></li>
 
+                    <li class="nav-item nav-profile"><a href="../customer-edit-details/customer-profile.php">Profile</a></li>
+
                     <li class="nav-item logout"><a href="../../../middlewares/logout.php">Logout</a></a></li>
 
                 </ul>

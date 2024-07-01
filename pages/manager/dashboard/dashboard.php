@@ -173,7 +173,7 @@
 
         </section>
 
-        <section class="drivers-section">
+        <!-- <section class="drivers-section">
 
             <div class="driver-section-header">
 
@@ -214,7 +214,7 @@
 
             </div>
 
-        </section>
+        </section> -->
 
     </article>
     

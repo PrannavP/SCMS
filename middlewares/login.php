@@ -3,9 +3,22 @@
     require './connection.php';
 
     // login function
-    function manager_login($conn) {
+    function manager_login($conn){
         $email = $_POST["email"];
         $password = $_POST["psw"];
+
+        function login_manager_validation($email, $password, $conn){
+            $pattern = '/@servease\.com\.np$/';
+
+            // Login form validation
+            if(strlen($password) == 0 || strlen($email) == 0){
+                echo "All the fields are required";
+                header("Location: ../index.html");
+            }elseif(!preg_match($pattern, $email)){
+                echo "Invalid email manager email format.";
+                header("Location: ../index.html");
+            }
+        };
 
         // sql query
         $sql = "SELECT fullname, service_center FROM manager WHERE email = '$email' AND password = '$password'";
@@ -25,15 +38,24 @@
 
             // redirect to manager dashboard
             header("Location: ../pages/manager/dashboard/dashboard.php");
-        } else {
-            // echo "<p>Incorrect details.</p>";
-            // header("refresh:3, URL= ../index.html");
+        }else{
+            login_manager_validation($email, $password, $conn);
         }
     };
 
     function customer_login($conn) {
         $email = $_POST["email"];
         $password = $_POST["psw"];
+        
+        function login_customer_validation($email, $password){
+            if(strlen($email) == 0 || strlen($password) == 0){
+                echo "All fields are required";
+                header("Location: ../pages/customer/customer-login.php");
+                exit();
+            };
+        };
+
+        login_customer_validation($email, $password);
 
         // SQL query to get the hashed password from the database
         $sql = "SELECT `full_name`, `email`, `password` FROM customer WHERE `email` = '$email'";
@@ -64,15 +86,13 @@
 
                 // Redirect to customer dashboard
                 header("Location: ../pages/customer/dashboard/customer.php");
+                exit();
             } else {
                 echo "<p>Incorrect customer details</p>";
                 echo "error";
                 header("refresh:3, URL=../pages/customer/customer-login.php");
             }
-        } else {
-            echo "<p>Incorrect customer details</p>";
-            header("refresh:3, URL=../pages/customer/customer-login.php");
-        }
+        };
     };
 
     // admin login
