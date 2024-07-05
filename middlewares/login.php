@@ -43,38 +43,82 @@
         }
     };
 
+    // function customer_login($conn) {
+    //     $email = $_POST["email"];
+    //     $password = $_POST["psw"];
+        
+    //     function login_customer_validation($email, $password){
+    //         if(strlen($email) == 0 || strlen($password) == 0){
+    //             echo "All fields are required";
+    //             header("Location: ../pages/customer/customer-login.php");
+    //             exit();
+    //         };
+    //     };
+
+    //     login_customer_validation($email, $password);
+
+    //     // SQL query to get the hashed password from the database
+    //     $sql = "SELECT `full_name`, `email`, `password` FROM customer WHERE `email` = '$email'";
+    //     $result = mysqli_query($conn, $sql);
+
+    //     if ($result && mysqli_num_rows($result) > 0) {
+    //         // Fetching data from SQL
+    //         $row = mysqli_fetch_assoc($result);
+    //         $hashed_password = $row['password'];
+
+    //         echo "Passed first if statement";
+
+    //         // test
+    //         $isPasswordVerified = password_verify($password, $hashed_password);
+    //         var_dump($isPasswordVerified);
+
+    //         // Verify the password
+    //         if($isPasswordVerified) {
+    //             echo "Passed second if statement";
+    //             // Starting session
+    //             session_start();
+                
+    //             $_SESSION = array(); // Clear existing session data
+    //             $_SESSION["user_type"] = "customer";
+    //             $_SESSION["customer"]["name"] = $row['full_name'];
+    //             $_SESSION["customer"]["email"] = $email;
+    //             $_SESSION["customer"]["auth"] = true;
+
+    //             // Redirect to customer dashboard
+    //             header("Location: ../pages/customer/dashboard/customer.php");
+    //             exit();
+    //         } else {
+    //             echo "<p>Incorrect customer details</p>";
+    //             echo "error";
+    //             header("refresh:3, URL=../pages/customer/customer-login.php");
+    //         }
+    //     };
+    // };
+
     function customer_login($conn) {
         $email = $_POST["email"];
         $password = $_POST["psw"];
         
-        function login_customer_validation($email, $password){
-            if(strlen($email) == 0 || strlen($password) == 0){
-                echo "All fields are required";
-                header("Location: ../pages/customer/customer-login.php");
+        function login_customer_validation($email, $password) {
+            if (strlen($email) == 0 || strlen($password) == 0) {
+                header("Location: ../pages/customer/customer-login.php?error=All fields are required");
                 exit();
-            };
-        };
-
+            }
+        }
+    
         login_customer_validation($email, $password);
-
+    
         // SQL query to get the hashed password from the database
         $sql = "SELECT `full_name`, `email`, `password` FROM customer WHERE `email` = '$email'";
         $result = mysqli_query($conn, $sql);
-
+    
         if ($result && mysqli_num_rows($result) > 0) {
             // Fetching data from SQL
             $row = mysqli_fetch_assoc($result);
             $hashed_password = $row['password'];
-
-            echo "Passed first if statement";
-
-            // test
-            $isPasswordVerified = password_verify($password, $hashed_password);
-            var_dump($isPasswordVerified);
-
+    
             // Verify the password
-            if($isPasswordVerified) {
-                echo "Passed second if statement";
+            if (password_verify($password, $hashed_password)) {
                 // Starting session
                 session_start();
                 
@@ -83,17 +127,19 @@
                 $_SESSION["customer"]["name"] = $row['full_name'];
                 $_SESSION["customer"]["email"] = $email;
                 $_SESSION["customer"]["auth"] = true;
-
+    
                 // Redirect to customer dashboard
                 header("Location: ../pages/customer/dashboard/customer.php");
                 exit();
             } else {
-                echo "<p>Incorrect customer details</p>";
-                echo "error";
-                header("refresh:3, URL=../pages/customer/customer-login.php");
+                header("Location: ../pages/customer/customer-login.php?error=Incorrect customer details");
+                exit();
             }
-        };
-    };
+        } else {
+            header("Location: ../pages/customer/customer-login.php?error=Incorrect customer details");
+            exit();
+        }
+    }    
 
     // admin login
 
