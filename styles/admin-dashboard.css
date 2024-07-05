@@ -83,17 +83,52 @@ ul > li:last-child {
 .create-manager-section{
     display: inline-block;
     width: 30%;
-    border: 2px solid white;
+    /* border: 2px solid white; */
     padding: 10px;
 }
 
 .create-servicing-section{
+    margin-left: 30%;
+    margin-top: 25px;
     display: inline-block;
     width: 30%;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     padding: 10px;
 }
 
+.create-manager-heading{
+    margin-bottom: 10px;
+}
+
+.create-service_center-heading{
+    margin-bottom: 10px;
+}
+
+input{
+    margin-top: 1.5%;
+    width: 250px;
+    height: 25px;
+    padding-left: 4px;
+    font-weight: lighter;
+    font-size: 15px;
+}
+
 button{
+    padding: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #e28b7d;
+    color: #3e4448;
+    outline: none;
+    border: none;
+    margin-left: 4vw;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 17px;
+}
+
+select{
+    width: 255px;
+    height: 28px;
     cursor: pointer;
 }

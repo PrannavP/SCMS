@@ -37,7 +37,7 @@
 
                 <ul class="nav-items-lists">
 
-                    <li class="nav-item nav-home active"><a href="#">Dashboard</a></li>
+                    <li class="nav-item nav-home"><a href="../dashboard/customer.php">Dashboard</a></li>
 
                     <li class="nav-item nav-customer_requests"><a href="../customer-request-history/customer-request-history.php">Requests History</a></li>
 
@@ -45,7 +45,7 @@
 
                     <li class="nav-item nav-inventory"><a href="../customer-suggestion-issue/customer-suggestion-issue.php">Suggestion / Issues</a></li>
 
-                    <li class="nav-item nav-inventory"><a href="#">Profile</a></li>
+                    <li class="nav-item nav-inventory active"><a href="#">Profile</a></li>
 
                     <li class="nav-item logout"><a href="../../../middlewares/logout.php">Logout</a></a></li>
 

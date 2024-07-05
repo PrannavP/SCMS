@@ -28,7 +28,7 @@ main{
     flex-direction: column;
     background-color: #5183A5;
     border: 1px solid rgba(61, 59, 59, 0.477);
-    height: 225px;
+    height: 245px;
 }
 
 input{
@@ -66,5 +66,5 @@ button{
     background-color: rgb(37, 232, 37);
     position: absolute;
     top: 3%;
-    right: 1%;
+    left: 50%;
 }

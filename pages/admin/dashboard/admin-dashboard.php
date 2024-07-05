@@ -22,12 +22,6 @@
 </head>
 <body>
 
-    <?php // echo $_SESSION["manager"]["service-center"] ?>
-
-    <!-- <p><?php /*echo $_SESSION["user_type"]*/ ?></p>
-    <p><?php /*echo $_SESSION["manager"]["name"]*/ ?></p> -->
-    <!-- <button><a href="../../middlewares/logout.php">Logout</a></button> -->
-
     <header>
 
         <h2>SERVEASE</h2>
@@ -44,7 +38,7 @@
 
                     <li class="nav-item nav-home active"><a href="./dashboard.php">Home</a></li>
 
-                    <li class="nav-item nav-admin-managers"><a href="#">Managers</a></li>
+                    <li class="nav-item nav-admin-managers"><a href="../admin-managers/admin-managers.php">Managers</a></li>
 
                     <li class="nav-item nav-admin-service_centers"><a href="../admin-service-centers/admin-service-centers.php">Service Centers</a></li>
 
@@ -70,62 +64,62 @@
 
                 <div class="fullname-field">
 
-                <label for="manager-fullname">Full Name</label><br>
+                    <label for="manager-fullname">Full Name</label><br>
 
-                <input type="text" name="manager-fullname" id="manager-fullname">
+                    <input type="text" name="manager-fullname" id="manager-fullname">
 
-            </div>
+                </div>
 
-            <div class="contactnumber-field">
+                <div class="contactnumber-field">
 
-                <label for="manager-contactnumber">Contact Number</label><br>
+                    <label for="manager-contactnumber">Contact Number</label><br>
 
-                <input type="number" name="manager-contactnumber" id="manager-contactnumber">
+                    <input type="number" name="manager-contactnumber" id="manager-contactnumber">
 
-            </div>
+                </div>
 
-            <div class="email-field">
+                <div class="email-field">
 
-                <label for="manager-email">Email</label><br>
+                    <label for="manager-email">Email</label><br>
 
-                <input type="email" name="manager-email" id="manager-email">
+                    <input type="email" name="manager-email" id="manager-email">
 
-            </div>
+                </div>
 
-            <div class="password-field">
+                <div class="password-field">
 
-                <label for="manager-password">Password</label><br>
+                    <label for="manager-password">Password</label><br>
 
-                <input type="password" name="manager-password" id="manager-password">
+                    <input type="password" name="manager-password" id="manager-password">
 
-            </div>
+                </div>
 
-            <div class="service_center-field">
+                <div class="service_center-field">
 
-                <label for="manager-service_center">Service Center:</label><br>
+                    <label for="manager-service_center">Service Center:</label><br>
 
-                <select name="service_center" id="service_center">
-                    <option>Choose the service center</option>
-                        <?php
-                            require '../../../middlewares/connection.php';
+                    <select name="service_center" id="service_center">
+                        <option>Choose the service center</option>
+                            <?php
+                                require '../../../middlewares/connection.php';
 
-                            $query_to_get_all_service_centers = "SELECT `name` FROM `servicecenter`";
+                                $query_to_get_all_service_centers = "SELECT `name` FROM `servicecenter`";
 
-                            $service_center_lists = mysqli_query($conn, $query_to_get_all_service_centers);
+                                $service_center_lists = mysqli_query($conn, $query_to_get_all_service_centers);
 
-                            while($service_center_list = mysqli_fetch_assoc($service_center_lists)){
-                                echo "<option>" . $service_center_list['name'] . "</option>";
-                            }
-                        ?>
-                    </select>
+                                while($service_center_list = mysqli_fetch_assoc($service_center_lists)){
+                                    echo "<option>" . $service_center_list['name'] . "</option>";
+                                }
+                            ?>
+                        </select>
 
-            </div>
+                </div>
 
-            <div class="manager-submit-button-field">
+                <div class="manager-submit-button-field">
 
-                <button class="manager-submit-button">Create Manager</button>
+                    <button class="manager-submit-button">Create Manager</button>
 
-            </div>
+                </div>
 
             </form>
 

@@ -63,6 +63,12 @@
 
     <main>
 
+        <!-- <div class="return-back-icon-section">
+
+            <img src="../../../images/left-arrow-svgrepo-com.svg" width="50px" alt="Return Back Icon">
+
+        </div> -->
+
         <div class="change-text">
 
             <h3>Update Your Profile</h3>

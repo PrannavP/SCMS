@@ -68,7 +68,6 @@
                     <th>Contact Person</th>
                     <th>Contact Number</th>
                     <th>Slots</th>
-                    <th>Action</th>
                 </tr>
 
                 <?php 
@@ -87,14 +86,6 @@
                     <td class="contact_person"><?php echo $rows['contact_person'] ?></td>
                     <td class="contact_number"><?php echo $rows['contact_number'] ?></td>
                     <td class="slots"><?php echo $rows['slots'] ?></td>
-                    <!-- <td>
-                        <button class="editBtn actionBtn" id="editButton" onclick="showEditMenu('<?php echo $rows['mechanic_id'] ?>', '<?php echo $rows['fullname'] ?>', '<?php echo $rows['contactnumber'] ?>', '<?php echo $rows['address'] ?>')"><a href="#">Edit</a></button>
-                        <button class="removeBtn actionBtn" id="removeButton"><a href="./remove-mechanics.php?mechanic_id=<?php echo $rows['mechanic_id'] ?>">Remove</a></button>
-                    </td> -->
-                    <td>
-                        <button>Edit</button>
-                        <button>Delete</button>
-                    </td>
                 </tr>
 
                 <?php } ?>
