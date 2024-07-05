@@ -49,7 +49,7 @@
             <a href="./customer-forgot-password/customer-forgot-password.html">Forgot Password</a>
         </button>
         <button class="create-account-button control-button">
-            <a href="../customer/register-customer/register-customer.html">Create Account</a>
+            <a href="../customer/register-customer/register-customer.php">Create Account</a>
         </button>
     </div>
     <script>

@@ -88,7 +88,6 @@
                 <tr>
                     <th>Part Number</th>
                     <th>Part Name</th>
-                    <th>In Stock</th>
                     <th>Price</th>
                 </tr>
 
@@ -106,7 +105,6 @@
                 <tr>
                     <td><?php echo $rows["item_number"] ?></td>
                     <td><?php echo $rows["item_name"] ?></td>
-                    <td><?php echo $rows["item_quantity"] ?></td>
                     <td><?php echo $rows["item_price"] ?></td>
                 </tr>
 

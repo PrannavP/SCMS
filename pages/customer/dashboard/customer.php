@@ -225,6 +225,13 @@
         </section>
 
     </article>
+
+    <script>
+        // Disable dates earlier than today's date in the date input field
+        var today = new Date().toISOString().split('T')[0];
+        document.getElementById('date').setAttribute('min', today);
+    </script>
+
     
 </body>
 </html>
