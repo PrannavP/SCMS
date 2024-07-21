@@ -88,8 +88,6 @@
 					<th>Date</th>
 					<th>Time</th>
 					<th>Contact</th>
-					<th>Pickup</th>
-					<th>Delivery</th>
 					<th>Status</th>
 					<th>Action</th>
 				</tr>
@@ -97,7 +95,7 @@
 				<?php
 					$serviceCenter = $_SESSION['manager']['service-center'];
 
-					$sql_query_to_get_service_requests = "SELECT request_id, requested_by, email, service_center, model, details, contact_number, requested_date, requested_time, pickup, pickup_address, delivery, delivery_address, servicing_status, mechanic_assigned, parts, amount FROM service_request WHERE service_center = '$serviceCenter'";
+					$sql_query_to_get_service_requests = "SELECT request_id, requested_by, email, service_center, model, details, contact_number, requested_date, requested_time, servicing_status, mechanic_assigned, parts, amount FROM service_request WHERE service_center = '$serviceCenter'";
 
 					// execute the query
 					$service_requests = mysqli_query($conn, $sql_query_to_get_service_requests);
@@ -112,8 +110,6 @@
 					<td><?php echo $rows['requested_date'] ?></td>
 					<td><?php echo $rows['requested_time'] ?></td>
 					<td><?php echo $rows['contact_number'] ?></td>
-					<td><?php echo $rows['pickup_address'] ?></td>
-					<td><?php echo $rows['delivery_address'] ?></td>
 					<td style="width: 80px;"><?php echo $rows['servicing_status'] ?></td>
 					<?php 
 						if($rows['servicing_status'] == "Pending Approval"){
@@ -128,6 +124,7 @@
 						}else{
 							echo '<td style="width: 16%";>';
 							echo '<button class="actionBtn acceptBtn" id="viewDetailsButton" onclick="openDetailsModal(' . $rows['request_id'] . ', \'' . $rows['details'] . '\', \'' . $rows['amount'] . '\', \'' . $rows['servicing_status'] . '\', \'' . $rows['parts'] . '\')">Details</button>';
+							// echo '<button class="actionBtn acceptBtn"><a href="./add-parts-service-requests.php?request_id=' . htmlspecialchars($rows['request_id'], ENT_QUOTES) . '">Details</a></button>';
 							echo '<button class="actionBtn declineBtn" id="completedServicing"><a href="./complete-servicing.php?request_id=' . $rows['request_id'] . '">Complete</a></button>';
 							echo '</td>';
 						}
@@ -167,7 +164,7 @@
 
 				<div class="details-field">
 					<label for="customer-servicing-detail">Details:</label><br>
-					<textarea name="servicing-details"  id="customer-servicing-detail" cols="38" rows="4"></textarea>
+					<textarea readonly="true" name="servicing-details"  id="customer-servicing-detail" cols="38" rows="4"></textarea>
 				</div>
 
                 <div class="assignMechanic-field">
@@ -245,8 +242,9 @@
 				<div class="parts-field">
 
 					<label for="parts">Parts:</label><br>
-					<textarea name="parts" id="details-parts" cols="38" rows="4"></textarea>
-
+					<textarea name="parts" id="details-parts" cols="38" rows="2" style="margin-bottom: 10px;" disabled></textarea>
+					<br>
+					<button class="add-parts-btn" style="margin-top: 10px;"><a href="./parts/index.php">Add Parts</a></button>
 				</div>
 
 				<div class="servicing-amount-field">
@@ -256,7 +254,7 @@
 
 				</div>
 
-                <button id="changeDetailsButton">Confirm</button>
+                <button id="changeDetailsButton" style="margin-top: 12px;">Confirm</button>
 
             </form>
 

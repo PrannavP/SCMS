@@ -49,6 +49,9 @@ function hideEditMenu(){
 function hideDetailsMenu(){
     const detailsMenuContainer = document.querySelector('.details-service-container');
 
+    // delete localstorage data
+    localStorage.removeItem('id');
+
     detailsMenuContainer.style.display = "none";
 };
 
